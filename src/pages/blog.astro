@@ -1,0 +1,49 @@
+---
+import {
+    getLangFromUrl,
+    useTranslations,
+    useTranslatedPath,
+} from "../i18n/utils"
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+const translatePath = useTranslatedPath(lang)
+
+import { getCollection } from "astro:content"
+
+import BaseLayout from "../layouts/BaseLayout.astro"
+
+import ContactCTA from "../components/ContactCTA.astro"
+import PortfolioPreview from "../components/PortfolioPreview.astro"
+import Hero from "../components/Hero.astro"
+import Grid from "../components/Grid.astro"
+
+const articles = (await getCollection("blog")).sort(
+    (a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
+)
+---
+
+<BaseLayout
+    title={t("blog.baselayout.title")}
+    description={t("blog.baselayout.description")}
+>
+    <div class="stack gap-20">
+        <main class="wrapper stack gap-8">
+            <Hero
+                title={t("blog.hero.title")}
+                tagline={t("blog.hero.tagline")}
+                align="start"
+            />
+            <Grid variant="offset">
+                {
+                    articles.map((articles) => (
+                        <li>
+                            <PortfolioPreview project={articles} />
+                        </li>
+                    ))
+                }
+            </Grid>
+        </main>
+        <ContactCTA />
+    </div>
+</BaseLayout>
