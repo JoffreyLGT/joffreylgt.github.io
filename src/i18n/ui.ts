@@ -16,12 +16,12 @@ export const ui = {
     "nav.home": "Home",
     "nav.work": "Work",
     "nav.about": "About",
-    "work.baselayout.title": "My projects | Joffrey Lagut",
-    "work.baselayout.description": "Learn about Joffrey Lagut's most recent projects",
+    "work.document.title": "My projects | Joffrey Lagut",
+    "work.document.description": "Learn about Joffrey Lagut's most recent projects",
     "work.hero.title": "My projects",
     "work.hero.tagline": "See my most recent projects below.",
-    "blog.baselayout.title": "My blog | Joffrey Lagut",
-    "blog.baselayout.description": "Learn about Joffrey Lagut's most recent posts",
+    "blog.document.title": "My blog | Joffrey Lagut",
+    "blog.document.description": "Learn about Joffrey Lagut's most recent posts",
     "blog.hero.title": "My blog",
     "blog.hero.tagline": "See my most recent posts below.",
 
@@ -41,19 +41,22 @@ export const ui = {
     "contact.title": "Interested in working together?",
     "contact.send_message": "Send me a message",
 
-        "nav.home": "Accueil",
+    "default.document.title": "Joffrey Lagut",
+    "default.document.description": "The personal website of Joffrey Lagut.",
+
+    "nav.home": "Accueil",
     "nav.work": "Projets",
     "nav.blog": "Blog",
     "nav.about": "À propos",
     "nav.twitter": "Twitter",
 
-    "work.baselayout.title": "Mes projets | Joffrey Lagut",
-    "work.baselayout.description": "En savoir plus sur les projets les plus récents",
+    "work.document.title": "Mes projets | Joffrey Lagut",
+    "work.document.description": "En savoir plus sur les projets les plus récents",
     "work.hero.title": "Mes projets",
     "work.hero.tagline": "Ci-dessous mes projets les plus récents.",
 
-    "blog.baselayout.title": "Mon blog | Joffrey Lagut",
-    "blog.baselayout.description": "En savoir plus sur les articles les plus récents",
+    "blog.document.title": "Mon blog | Joffrey Lagut",
+    "blog.document.description": "En savoir plus sur les articles les plus récents",
     "blog.hero.title": "Mon blog",
     "blog.hero.tagline": "Ci-dessous mes derniers articles publiés.",
 
@@ -91,21 +94,28 @@ export const ui = {
 
   },
   fr: {
+
+    "default.document.title": "Joffrey Lagut",
+    "default.document.description": "Site personnel de Joffrey Lagut",
+
     "nav.home": "Accueil",
     "nav.work": "Projets",
     "nav.blog": "Blog",
     "nav.about": "À propos",
     "nav.twitter": "Twitter",
 
-    "work.baselayout.title": "Mes projets | Joffrey Lagut",
-    "work.baselayout.description": "En savoir plus sur les projets les plus récents",
+    "work.document.title": "Mes projets | Joffrey Lagut",
+    "work.document.description": "En savoir plus sur les projets les plus récents",
     "work.hero.title": "Mes projets",
     "work.hero.tagline": "Ci-dessous mes projets les plus récents.",
 
-    "blog.baselayout.title": "Mon blog | Joffrey Lagut",
-    "blog.baselayout.description": "En savoir plus sur les articles les plus récents",
+    "blog.document.title": "Mon blog | Joffrey Lagut",
+    "blog.document.description": "Articles publiés par Joffrey Lagut.",
     "blog.hero.title": "Mon blog",
     "blog.hero.tagline": "Ci-dessous mes derniers articles publiés.",
+
+    "home.document.title": "Accueil | Joffrey Lagut",
+    "home.document.description": "Informations sur Joffrey Lagut.",
 
     "home.hero.title": "Hello, je m'appelle Joffrey Lagut 👋🏻",
     "home.hero.tagline": "Je suis un passionné de technologie vivant actuellement à Dijon.",
