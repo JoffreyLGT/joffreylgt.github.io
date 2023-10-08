@@ -19,3 +19,4 @@ All commands are run from the root of the project, from a terminal:
 
 - This website was built using [Astro Starter Kit: Portfolio](https://github.com/withastro/astro/tree/main/examples/portfolio).
     Thank you Astro for offering such a beautiful template.
+- [Mohamed Hassan](https://pxhere.com/fr/photographer/767067) for some images used in projects.
