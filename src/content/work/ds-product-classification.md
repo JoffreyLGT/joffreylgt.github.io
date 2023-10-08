@@ -1,28 +1,20 @@
 ---
-title: Plateforme de classification de produits
+title: Modèles de classification de produits
 publishDate: 2023-10-07 22:09:00
-img: /assets/projects/mlops-product-classification-cover.jpg
-img_credit: "[Photo par Mohamed Hassan](https://pxhere.com/fr/photo/1571969)"
-img_alt: Représentation d'une boutique en ligne avec des symboles divers autours.
+img: /assets/projects/ds-product-classification-cover.jpg
+img_credit: "[Photo par Mohamed Hassan](https://pxhere.com/fr/photo/1584997)"
+img_alt: Représentation d'un cerveau dans un ordinateur portable.
 description: |
-  Création d'une plateforme de prédiction de la catégorie des produits d'une boutique en ligne.
+  Création de modèle de prédiction de la catégorie de produits pour un site e-commerce.
 tags:
   - Data Science
   - Machine Learning
-  - MLOps
 extra_tags:
   - Data Science
   - Machine Learning
-  - DevOps
   - Gestion de projet
-  - Docker
-  - Kubernete
-  - OpenTelemetry
-  - Signoz
-  - PostgreSQL
   - Python
-  - Github Actions
-  - CI/CD 
+  - Jupyter Notebook
 ---
 
 ## 🏗️ Article en cours de construction
