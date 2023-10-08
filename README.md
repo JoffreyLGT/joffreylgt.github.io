@@ -17,6 +17,5 @@ All commands are run from the root of the project, from a terminal:
 
 ## 🙏 Credits
 
-This website was built using [Astro Starter Kit: Portfolio](https://github.com/withastro/astro/tree/main/examples/portfolio).
-
-Thank you Astro for offering such a beautiful template.
+- This website was built using [Astro Starter Kit: Portfolio](https://github.com/withastro/astro/tree/main/examples/portfolio).
+    Thank you Astro for offering such a beautiful template.
