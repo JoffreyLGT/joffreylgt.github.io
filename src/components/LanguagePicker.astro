@@ -1,6 +1,6 @@
 ---
-import { languages, languagesIcons } from "../i18n/ui"
-import { getLangFromUrl, useTranslatedPath } from "../i18n/utils"
+import { languages, languagesIcons } from "@i18n/ui"
+import { getLangFromUrl, useTranslatedPath } from "@i18n/utils"
 
 const currentLang = getLangFromUrl(Astro.url)
 const translatePath = useTranslatedPath(currentLang)

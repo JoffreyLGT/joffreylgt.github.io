@@ -1,13 +1,13 @@
 ---
 // Learn about using Astro layouts:
 // https://docs.astro.build/en/core-concepts/layouts/
-import { getLangFromUrl } from "../i18n/utils"
+import { getLangFromUrl } from "@i18n/utils"
 
 const lang = getLangFromUrl(Astro.url)
 // Component Imports
-import MainHead from "../components/MainHead.astro"
-import Nav from "../components/Nav.astro"
-import Footer from "../components/Footer.astro"
+import MainHead from "@components/MainHead.astro"
+import Nav from "@components/Nav.astro"
+import Footer from "@components/Footer.astro"
 
 interface Props {
     title?: string | undefined
