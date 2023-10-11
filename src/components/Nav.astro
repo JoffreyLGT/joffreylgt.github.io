@@ -14,7 +14,7 @@ import type { iconPaths } from "./IconPaths"
 const textLinks: { label: string; href: string }[] = [
     { label: t("nav.home"), href: translatePath("/home") },
     { label: t("nav.work"), href: translatePath("/work/") },
-    { label: t("nav.blog"), href: translatePath("/blog/") },
+    { label: t("nav.articles"), href: translatePath("/articles/") },
     // { label: t("nav.about"), href: translatePath("/about/") },
 ]
 
@@ -202,7 +202,7 @@ const iconLinks: {
                 setExpanded(e.matches)
                 btn.hidden = e.matches
             }
-            const mediaQueries = window.matchMedia("(min-width: 50em)")
+            const mediaQueries = window.matchMedia("(min-width: 48em)")
             handleViewports(mediaQueries)
             mediaQueries.addEventListener("change", handleViewports)
         }
@@ -334,7 +334,7 @@ const iconLinks: {
         height: calc(var(--icon-size) + 2 * var(--icon-padding));
     }
 
-    @media (min-width: 50em) {
+    @media (min-width: 48em) {
         nav {
             display: grid;
             grid-template-columns: 1fr auto 1fr;
@@ -409,7 +409,7 @@ const iconLinks: {
         }
     }
 
-    @media (min-width: 60em) {
+    @media (min-width: 64em) {
         .socials {
             display: flex;
             justify-content: flex-end;

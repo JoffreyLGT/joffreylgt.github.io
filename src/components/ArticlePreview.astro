@@ -2,13 +2,13 @@
 import type { CollectionEntry } from "astro:content"
 
 interface Props {
-    blog: CollectionEntry<"blog">
+    article: CollectionEntry<"articles">
 }
 
-const { data, slug } = Astro.props.blog
+const { data, slug } = Astro.props.article
 ---
 
-<a class="card" href={`/blog/${slug}`}>
+<a class="card" href={`/articles/${slug}`}>
     <span class="title">{data.title}</span>
     <img
         src={data.img}
@@ -56,7 +56,7 @@ const { data, slug } = Astro.props.blog
         object-fit: cover;
     }
 
-    @media (min-width: 50em) {
+    @media (min-width: 48em) {
         .card {
             height: 22rem;
             border-radius: 1.5rem;

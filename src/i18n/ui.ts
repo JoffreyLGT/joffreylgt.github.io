@@ -18,7 +18,7 @@ export const ui = {
 
     "nav.home": "Home",
     "nav.work": "Projects",
-    "nav.blog": "Blog",
+    "nav.articles": "Blog",
     "nav.about": "About me",
     "nav.social.title": "Visit my %social% profile",
 
@@ -27,10 +27,11 @@ export const ui = {
     "work.hero.title": "My projects",
     "work.hero.tagline": "Here is a list of my recent work.<br />If you would like to know more, don't hesitate to contact me: I'll be happy to share more with you!",
 
-    "blog.document.title": "My blog | Joffrey Lagut",
-    "blog.document.description": "Read Joffrey Lagut's articles.",
-    "blog.hero.title": "My blog",
-    "blog.hero.tagline": "Here is a list of the articles I published.",
+    "articles.document.title": "My blog | Joffrey Lagut",
+    "articles.document.description": "Read Joffrey Lagut's articles.",
+    "articles.hero.title": "My blog",
+    "articles.hero.tagline": "Here is a list of the articles I published.",
+    "articles.details.back_to_list": "Back to articles",
 
     "home.hero.title": "Hello, my name is Joffrey Lagut",
     "home.hero.tagline": "I am a tech enthusiast based in Dijon, France.",
@@ -52,8 +53,8 @@ export const ui = {
     "home.work.title": "Featured projects",
     "home.work.subtitle": "Here is a sample of my recent projects.",
     
-    "home.blog.title": "Featured articles",
-    "home.blog.subtitle": "I love to share some of my thoughts with my pairs. Sometimes, they are only remarks. Other times, they are solutions to issues I faced that could help others.",
+    "home.articles.title": "Featured articles",
+    "home.articles.subtitle": "I love to share some of my thoughts with my pairs. Sometimes, they are only remarks. Other times, they are solutions to issues I faced that could help others.",
 
     "home.skill.title": "Key expertise",
     "home.skill.subtitle": "My passion regarding technology pushes me to always learn new things. Here is a selection of skills I use daily.",
@@ -76,7 +77,7 @@ export const ui = {
 
     "nav.home": "Accueil",
     "nav.work": "Projets",
-    "nav.blog": "Blog",
+    "nav.articles": "Blog",
     "nav.about": "À propos de moi",
     "nav.social.title": "Visiter mon profil %social%",
 
@@ -85,10 +86,11 @@ export const ui = {
     "work.hero.title": "Mes projets",
     "work.hero.tagline": "Voici une liste de mes travaux les plus récents.<br />Si vous souhaitez en savoir plus, n'hésitez pas à m'envoyer un message : je me ferai une joie d'en discuter avec vous !",
 
-    "blog.document.title": "Mon blog | Joffrey Lagut",
-    "blog.document.description": "Articles publiés par Joffrey Lagut.",
-    "blog.hero.title": "Mon blog",
-    "blog.hero.tagline": "Ci-dessous mes derniers articles publiés.",
+    "articles.document.title": "Mon blog | Joffrey Lagut",
+    "articles.document.description": "Articles publiés par Joffrey Lagut.",
+    "articles.hero.title": "Mon blog",
+    "articles.hero.tagline": "Ci-dessous mes derniers articles publiés.",
+    "articles.details.back_to_list": "Liste des articles",
 
     "home.document.title": "Accueil | Joffrey Lagut",
     "home.document.description": "Informations sur Joffrey Lagut.",
@@ -114,8 +116,8 @@ export const ui = {
     "home.work.title": "Réalisations récentes",
     "home.work.subtitle": "Jetez un œil sur quelques un de mes projets récents.",
     
-    "home.blog.title": "Articles",
-    "home.blog.subtitle": "J'aime partager mes pensées avec mes pairs. Parfois des remarques, d'autres fois des solutions à certains problèmes que j'ai rencontré.",
+    "home.articles.title": "Articles",
+    "home.articles.subtitle": "J'aime partager mes pensées avec mes pairs. Parfois des remarques, d'autres fois des solutions à certains problèmes que j'ai rencontré.",
 
     "home.skill.title": "Compétences clés",
     "home.skill.subtitle": "Ma passion pour la technologie me pousse toujours à apprendre de nouvelles choses. Voici une sélection de compétences que j'utilise au quotidien :",
