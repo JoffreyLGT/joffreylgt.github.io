@@ -1,19 +1,24 @@
-<!-- markdownlint-disable MD013 -->
+<!-- markdownlint-disable MD013 MD033 MD041 -->
+<p align="center">
+  <img src="public/favicon.svg" width="150px" align="center" alt="Terminal icon" />
+  <h1 align="center">Joffrey Lagut</h1>
+  <p align="center">
+    ✨ <a href="https://joffreylgt.github.io">https://joffreylgt.github.io</a> ✨
+    <br/>
+    Personal website with information about me, my projects and my blog articles.
+  </p>
+</p>
 
-# Joffrey's personal website
+<div align="center">
+  <a href="https://github.com/JoffreyLGT">Github</a>
+  <span>&nbsp;&nbsp;•&nbsp;&nbsp;</span>
+  <a href="https://twitter.com/dev_joff">Twitter</a>
+  <span>&nbsp;&nbsp;•&nbsp;&nbsp;</span>
+  <a href="https://www.linkedin.com/in/joffrey-lagut-9b3b1076/">Linkedin</a>
+  <br />
+</div>
 
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+> This project is public source.
 
 ## 🙏 Credits
 
