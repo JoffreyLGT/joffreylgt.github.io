@@ -20,6 +20,7 @@ export const ui = {
     "nav.work": "Projects",
     "nav.blog": "Blog",
     "nav.about": "About me",
+    "nav.social.title": "Visit my %social% profile",
 
     "work.document.title": "My projects | Joffrey Lagut",
     "work.document.description": "Learn more about Joffrey Lagut's recent projects.",
@@ -77,6 +78,7 @@ export const ui = {
     "nav.work": "Projets",
     "nav.blog": "Blog",
     "nav.about": "À propos de moi",
+    "nav.social.title": "Visiter mon profil %social%",
 
     "work.document.title": "Mes projets | Joffrey Lagut",
     "work.document.description": "En savoir plus sur mes projets les plus récents",
