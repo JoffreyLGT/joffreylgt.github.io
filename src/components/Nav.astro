@@ -100,7 +100,10 @@ const iconLinks: {
                             href={href}
                             class="social"
                             target="_blank"
-                            title={`Visit my ${label} profile`}
+                            title={t("nav.social.title").replace(
+                                "%social%",
+                                label
+                            )}
                         >
                             <span class="sr-only">{label}</span>
                             <Icon icon={icon} />
@@ -144,7 +147,10 @@ const iconLinks: {
                             href={href}
                             class="social"
                             target="_blank"
-                            title={`Visit my ${label} profile`}
+                            title={t("nav.social.title").replace(
+                                "%social%",
+                                label
+                            )}
                         >
                             <span class="sr-only">{label}</span>
                             <Icon icon={icon} />
