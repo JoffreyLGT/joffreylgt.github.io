@@ -1,9 +1,5 @@
 ---
-import {
-    getLangFromUrl,
-    useTranslations,
-    useTranslatedPath,
-} from "@i18n/utils"
+import { getLangFromUrl, useTranslations, useTranslatedPath } from "@i18n/utils"
 
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
@@ -14,7 +10,7 @@ import { getCollection } from "astro:content"
 import BaseLayout from "@layouts/BaseLayout.astro"
 
 import ContactCTA from "@components/ContactCTA.astro"
-import PortfolioPreview from "@components/PortfolioPreview.astro"
+import BlogPreview from "@components/BlogPreview.astro"
 import Hero from "@components/Hero.astro"
 import Grid from "@components/Grid.astro"
 
@@ -36,9 +32,9 @@ const articles = (await getCollection("blog")).sort(
             />
             <Grid variant="offset">
                 {
-                    articles.map((articles) => (
+                    articles.map((article) => (
                         <li>
-                            <PortfolioPreview project={articles} />
+                            <BlogPreview blog={article} />
                         </li>
                     ))
                 }
