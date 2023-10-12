@@ -34,6 +34,10 @@ export const ui = {
 
     "home.hero.title": "Hello, my name is Joffrey Lagut",
     "home.hero.tagline": "I am a tech enthusiast based in Dijon, France.",
+
+    "home.document.title": "Home | Joffrey Lagut",
+    "home.document.description": "Information about Joffrey Lagut.",
+
     "home.hero.roles.first": "Engineer",
     "home.hero.roles.second": "Book lover",
     "home.hero.roles.third": "Cinephile",
