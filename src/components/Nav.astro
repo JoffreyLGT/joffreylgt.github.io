@@ -12,7 +12,7 @@ import type { iconPaths } from "./IconPaths"
 
 /** Main menu items */
 const textLinks: { label: string; href: string }[] = [
-    { label: t("nav.home"), href: translatePath("/home") },
+    { label: t("nav.home"), href: translatePath("/") },
     { label: t("nav.work"), href: translatePath("/work/") },
     // { label: t("nav.blog"), href: translatePath("/blog/") },
     // { label: t("nav.about"), href: translatePath("/about/") },
@@ -44,7 +44,7 @@ const iconLinks: {
 
 <nav>
     <div class="menu-header">
-        <a href={translatePath("/home")} class="site-title">
+        <a href={translatePath("/")} class="site-title">
             <Icon
                 icon="terminal-window"
                 color="var(--accent-regular)"
@@ -116,27 +116,29 @@ const iconLinks: {
     <div id="menu-content" hidden>
         <ul class="nav-items">
             {
-                textLinks.map(({ label, href }) => (
-                    <li>
-                        <a
-                            aria-current={Astro.url.pathname === href}
-                            class:list={[
-                                "link",
-                                {
-                                    active:
-                                        Astro.url.pathname === href ||
-                                        (href !== "/" &&
-                                            Astro.url.pathname.startsWith(
-                                                href
-                                            )),
-                                },
-                            ]}
-                            href={href}
-                        >
-                            {label}
-                        </a>
-                    </li>
-                ))
+                textLinks.map(({ label, href }) => {
+                    return (
+                        <li>
+                            <a
+                                aria-current={Astro.url.pathname === href}
+                                class:list={[
+                                    "link",
+                                    {
+                                        active:
+                                            Astro.url.pathname === href ||
+                                            (href !== translatePath("/") &&
+                                                Astro.url.pathname.startsWith(
+                                                    href
+                                                )),
+                                    },
+                                ]}
+                                href={href}
+                            >
+                                {label}
+                            </a>
+                        </li>
+                    )
+                })
             }
         </ul>
         <div class="menu-footer">
