@@ -1,9 +1,14 @@
 ---
 import { languages, languagesIcons } from "@i18n/ui"
-import { getLangFromUrl, useTranslatedPath } from "@i18n/utils"
+import {
+    getLangFromUrl,
+    useTranslatedPath,
+    getUrlWithoutLang,
+} from "@i18n/utils"
 
 const currentLang = getLangFromUrl(Astro.url)
 const translatePath = useTranslatedPath(currentLang)
+const urlWithoutLang = getUrlWithoutLang(Astro.url)
 
 import Icon from "./Icon.astro"
 ---
@@ -14,7 +19,7 @@ import Icon from "./Icon.astro"
             ([lang, label]) =>
                 currentLang !== lang && (
                     <span title={label}>
-                        <a href={translatePath("/home", lang)}>
+                        <a href={translatePath(urlWithoutLang, lang)}>
                             <Icon icon={languagesIcons[lang]} size="32px" />
                         </a>
                     </span>

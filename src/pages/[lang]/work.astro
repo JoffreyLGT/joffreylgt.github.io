@@ -1,13 +1,18 @@
 ---
-import {
-    getLangFromUrl,
-    useTranslations,
-    useTranslatedPath,
-} from "@i18n/utils"
+import { languages } from "@i18n/ui"
+
+export async function getStaticPaths() {
+    const paths = Object.keys(languages).map((lang) => {
+        return { params: { lang: lang, slug: "work" } }
+    })
+
+    return paths
+}
+
+import { getLangFromUrl, useTranslations } from "@i18n/utils"
 
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
-const translatePath = useTranslatedPath(lang)
 
 import { getCollection } from "astro:content"
 
@@ -18,9 +23,9 @@ import PortfolioPreview from "@components/PortfolioPreview.astro"
 import Hero from "@components/Hero.astro"
 import Grid from "@components/Grid.astro"
 
-const projects = (await getCollection("work")).sort(
-    (a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
-)
+const projects = (await getCollection("work"))
+    .filter((project) => project.slug.startsWith(lang))
+    .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
 ---
 
 <BaseLayout

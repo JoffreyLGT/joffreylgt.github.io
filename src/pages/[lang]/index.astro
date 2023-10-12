@@ -1,9 +1,15 @@
 ---
-import {
-    getLangFromUrl,
-    useTranslations,
-    useTranslatedPath,
-} from "@i18n/utils"
+import { languages } from "@i18n/ui"
+
+export async function getStaticPaths() {
+    const paths = Object.keys(languages).map((lang) => {
+        return { params: { lang: lang, slug: "home" } }
+    })
+
+    return paths
+}
+
+import { getLangFromUrl, useTranslations, useTranslatedPath } from "@i18n/utils"
 
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)

@@ -1,4 +1,4 @@
-import { ui, defaultLang, showDefaultLang } from './ui';
+import { ui, defaultLang } from './ui';
 
 export function getLangFromUrl(url: URL) {
   const [, lang] = url.pathname.split('/');
@@ -14,6 +14,17 @@ export function useTranslations(lang: keyof typeof ui) {
 
 export function useTranslatedPath(lang: keyof typeof ui) {
   return function translatePath(path: string, l: string = lang) {
-    return !showDefaultLang && l === defaultLang ? path : `/${l}${path}`
+    return `/${l}${path}`
   }
+}
+
+export function getUrlWithoutLang(url: URL) {
+  const lang = getLangFromUrl(url)
+  return url.pathname.replace(lang + "/", "")
+}
+
+export function getSlugWithoutLang(slug: string) {
+  const [lang, ...slugWithoutLang] = slug.split('/');
+  if (lang in ui) return slugWithoutLang
+  return slug
 }
