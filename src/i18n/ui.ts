@@ -31,6 +31,7 @@ export const ui = {
     "blog.document.description": "Read Joffrey Lagut's articles.",
     "blog.hero.title": "My blog",
     "blog.hero.tagline": "Here is a list of the articles I published.",
+    "blog.post.go_back": "Back to list",
 
     "home.hero.title": "Hello, my name is Joffrey Lagut",
     "home.hero.tagline": "I am a tech enthusiast based in Dijon, France.",
@@ -93,6 +94,7 @@ export const ui = {
     "blog.document.description": "Articles publiés par Joffrey Lagut.",
     "blog.hero.title": "Mon blog",
     "blog.hero.tagline": "Ci-dessous mes derniers articles publiés.",
+    "blog.post.go_back": "Retour à la liste",
 
     "home.document.title": "Accueil | Joffrey Lagut",
     "home.document.description": "Informations sur Joffrey Lagut.",

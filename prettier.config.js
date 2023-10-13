@@ -3,7 +3,7 @@ export default {
   trailingComma: "es5",
   tabWidth: 4,
   semi: false,
-  plugins: ['prettier-plugin-astro'],
+  plugins: ['prettier-plugin-astro', "prettier-plugin-tailwindcss"],
   overrides: [
     {
       files: '*.astro',
