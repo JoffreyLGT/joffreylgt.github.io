@@ -1,16 +1,37 @@
-<div class="pill"><slot /></div>
+---
+interface Props {
+    size?: "nm" | "sm"
+    class?: string
+}
+
+const { size = "nm", class: extraClasses = "" } = Astro.props
+
+const smClasses = "px-3 py-1.5 font-medium"
+---
+
+<div
+    class={`${extraClasses != "" ? extraClasses : "pill"} rounded-full ${
+        size == "sm" ? "pill-sm " + smClasses : "pill-md"
+    }`}
+>
+    <slot />
+</div>
 
 <style>
-	.pill {
-		display: flex;
-		padding: 0.5rem 1rem;
-		gap: 0.5rem;
-		color: rgb(var(--accent-text-over));
-		border: 1px solid rgb(var(--accent-regular));
-		background-color: rgb(var(--accent-regular));
-		border-radius: 999rem;
-		font-size: var(--text-md);
-		line-height: 1.35;
-		white-space: nowrap;
-	}
+    .pill-md {
+        font-size: var(--text-md);
+        display: flex;
+        padding: 0.5rem 1rem;
+        gap: 0.5rem;
+        line-height: 1.35;
+        white-space: nowrap;
+        border: 1px solid rgb(var(--accent-regular));
+    }
+    .pill-sm {
+        font-size: var(--text-sm);
+    }
+    .pill {
+        color: rgb(var(--accent-text-over));
+        background-color: rgb(var(--accent-regular));
+    }
 </style>

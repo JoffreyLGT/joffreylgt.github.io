@@ -61,12 +61,14 @@ module.exports = {
                 "t-md": "var(--shadow-md)",
                 "t-lg": "var(--shadow-lg)",
             },
-            fontFamily:{
+            fontFamily: {
                 system: ["var(--font-system)"],
                 body: ["var(--font-body)"],
                 brand: ["var(--font-brand)"],
             },
         },
     },
-    plugins: [],
+    plugins: [
+        require('@tailwindcss/typography'),
+    ],
 }
