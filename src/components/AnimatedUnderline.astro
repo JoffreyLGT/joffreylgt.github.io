@@ -1,0 +1,31 @@
+---
+interface Props {
+    size?: "xs" | "sm" | "md"
+}
+
+const { size = "sm" } = Astro.props
+---
+
+<span class="group">
+    {
+        size === "xs" ? (
+            <div
+                class={`relative max-w-fit after:absolute after:bottom-[-3px] after:left-0 after:-z-10 after:block after:h-0.5 after:w-full after:origin-top-left after:scale-x-0 after:rounded-full after:bg-accent-regular after:transition after:duration-300 after:ease-in-out after:content-[''] after:group-hover:scale-x-100`}
+            >
+                <slot />
+            </div>
+        ) : size === "sm" ? (
+            <div
+                class={`relative max-w-fit after:absolute after:bottom-[-3px] after:left-0 after:-z-10 after:block after:h-1 after:w-full after:origin-top-left after:scale-x-0 after:rounded-full after:bg-accent-regular after:transition after:duration-300 after:ease-in-out after:content-[''] after:group-hover:scale-x-100`}
+            >
+                <slot />
+            </div>
+        ) : (
+            <div
+                class={`relative max-w-fit after:absolute after:bottom-[-3px] after:left-0 after:-z-10 after:block after:h-1.5 after:w-full after:origin-top-left after:scale-x-0 after:rounded-full after:bg-accent-regular after:transition after:duration-300 after:ease-in-out after:content-[''] after:group-hover:scale-x-100`}
+            >
+                <slot />
+            </div>
+        )
+    }
+</span>
