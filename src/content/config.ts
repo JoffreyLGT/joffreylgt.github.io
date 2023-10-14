@@ -14,7 +14,10 @@ export const collections = {
 	blog: defineCollection({
 		schema: ({ image }) => z.object({
 			title: z.string(),
-			description: z.string(),
+			description: z.string()//.refine((description) => description.length < 260, {
+			// 	message: "Description is longer than 260 characters and may not be displayed correctly!",
+			// }),
+			,
 			publishDate: z.coerce.date(),
 			tags: z.array(z.string()),
 			img: image().refine((img) => img.width >= 1080, {
