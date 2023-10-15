@@ -20,7 +20,7 @@ const { data, slug } = Astro.props.post
 ---
 
 <article
-    class="group w-full overflow-hidden rounded-lg shadow transition hover:shadow-lg"
+    class="group mx-auto w-full max-w-md overflow-hidden rounded-lg shadow transition hover:shadow-lg md:max-w-none"
 >
     <a href={translatePath(`/blog/${slug}`)}>
         <Image
