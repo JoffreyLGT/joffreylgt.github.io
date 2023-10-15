@@ -27,10 +27,10 @@ export const ui = {
     "work.hero.title": "My projects",
     "work.hero.tagline": "Here is a list of my recent work.<br />If you would like to know more, don't hesitate to contact me: I'll be happy to share more with you!",
 
-    "blog.document.title": "My blog | Joffrey Lagut",
+    "blog.document.title": "Blog | Joffrey Lagut",
     "blog.document.description": "Read Joffrey Lagut's articles.",
-    "blog.hero.title": "My blog",
-    "blog.hero.tagline": "Here is a list of the articles I published.",
+    "blog.hero.title": "Blog",
+    "blog.hero.tagline": "Remarks, solutions to my problems, code snippets or tutorials.",
     "blog.post.go_back": "Back to list",
 
     "home.hero.title": "Hello, my name is Joffrey Lagut",
@@ -90,10 +90,10 @@ export const ui = {
     "work.hero.title": "Mes projets",
     "work.hero.tagline": "Voici une liste de mes travaux les plus récents.<br />Si vous souhaitez en savoir plus, n'hésitez pas à m'envoyer un message : je me ferai une joie d'en discuter avec vous !",
 
-    "blog.document.title": "Mon blog | Joffrey Lagut",
+    "blog.document.title": "Blog | Joffrey Lagut",
     "blog.document.description": "Articles publiés par Joffrey Lagut.",
-    "blog.hero.title": "Mon blog",
-    "blog.hero.tagline": "Ci-dessous mes derniers articles publiés.",
+    "blog.hero.title": "Blog",
+    "blog.hero.tagline": "Simples remarques, solutions à mes problèmes, morceaux de code ou tutoriels.",
     "blog.post.go_back": "Retour à la liste",
 
     "home.document.title": "Accueil | Joffrey Lagut",
