@@ -67,7 +67,9 @@ const posts = posts_current_lang
                 tagline={t("blog.hero.tagline")}
                 align="start"
             />
-            <div class="flex flex-col mt-10 gap-y-10 border-gray-200 m-x-auto">
+            <div
+                class="m-x-auto mx-auto mt-10 grid w-full max-w-2xl grid-cols-1 gap-x-8 gap-y-12 border-gray-200 lg:max-w-none lg:grid-cols-3"
+            >
                 {posts.map((post) => <BlogPreview post={post} />)}
             </div>
         </main>

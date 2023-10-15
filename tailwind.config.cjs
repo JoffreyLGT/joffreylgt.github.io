@@ -7,6 +7,7 @@ module.exports = {
                 "accent": {
                     light: "var(--accent-light)",
                     regular: "var(--accent-regular)",
+                    textover: "var(--accent-text-over)",
                 }
             },
         },
