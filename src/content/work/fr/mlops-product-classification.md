@@ -6,11 +6,11 @@ img_credit: "[Photo par Mohamed Hassan](https://pxhere.com/fr/photo/1571969)"
 img_alt: Représentation d'une boutique en ligne avec des symboles divers autours.
 description: |
   Création d'une plateforme de prédiction de la catégorie des produits d'une boutique en ligne.
-tags:
+categories:
   - Data Science
   - Machine Learning
   - MLOps
-extra_tags:
+extra_categories:
   - Data Science
   - Machine Learning
   - DevOps

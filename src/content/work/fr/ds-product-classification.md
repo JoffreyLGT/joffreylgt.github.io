@@ -6,10 +6,10 @@ img_credit: "[Photo par Mohamed Hassan](https://pxhere.com/fr/photo/1584997)"
 img_alt: Représentation d'un cerveau dans un ordinateur portable.
 description: |
   Création de modèle de prédiction de la catégorie de produits pour un site e-commerce.
-tags:
+categories:
   - Data Science
   - Machine Learning
-extra_tags:
+extra_categories:
   - Data Science
   - Machine Learning
   - Gestion de projet

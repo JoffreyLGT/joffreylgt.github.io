@@ -1,16 +1,19 @@
 ---
-title: Post 1 Français
+title: Post 1 Français hello world how are you doing
 publishDate: 2020-03-02 00:00:00
 img: ../assets/stock-1.jpg
 img_alt: Iridescent ripples of a bright blue and pink liquid
 description: |
   We designed a whodunnit-style game to introduce Markdown formatting. Suspense — suspicion — syntax! We designed a whodunnit-style game to introduce Markdown formatting. Suspense — suspicion — syntax! We designed a whodunnit-style game to introduce Markdown formatting
-tags:
+categories:
   - Design
   - Dev
   - User Testing
+tags:
+  - Machine learning
+  - Tensorflow
 ---
-
+# Level-one heading
 ## Level-two heading
 
 > Tell me and I forget. Teach me and I remember. Involve me and I learn.

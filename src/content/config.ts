@@ -6,7 +6,8 @@ export const collections = {
 			title: z.string(),
 			description: z.string(),
 			publishDate: z.coerce.date(),
-			tags: z.array(z.string()),
+			categories: z.array(z.string()),
+			tags: z.array(z.string()).optional(),
 			img: z.string(),
 			img_alt: z.string().optional(),
 		}),
@@ -14,12 +15,10 @@ export const collections = {
 	blog: defineCollection({
 		schema: ({ image }) => z.object({
 			title: z.string(),
-			description: z.string()//.refine((description) => description.length < 260, {
-			// 	message: "Description is longer than 260 characters and may not be displayed correctly!",
-			// }),
-			,
+			description: z.string(),
 			publishDate: z.coerce.date(),
-			tags: z.array(z.string()),
+			categories: z.array(z.string()),
+			tags:z.array(z.string()).optional(),
 			img: image().refine((img) => img.width >= 1080, {
 				message: "Cover image must be at least 1080 pixels wide!",
 			}),

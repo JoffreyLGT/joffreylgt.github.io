@@ -2,6 +2,7 @@
 import { type CollectionEntry, getCollection } from "astro:content"
 
 import BaseLayout from "@layouts/BaseLayout.astro"
+import { Image } from "astro:assets"
 
 import ContactCTA from "@components/ContactCTA.astro"
 import AnimatedUnderline from "@components/AnimatedUnderline.astro"
@@ -33,131 +34,73 @@ export async function getStaticPaths() {
     return paths
 }
 
-import { getLangFromUrl, useTranslations, useTranslatedPath } from "@i18n/utils"
+import {
+    getLangFromUrl,
+    useTranslations,
+    useTranslatedPath,
+    formatDateRespectingLang,
+} from "@i18n/utils"
 
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
 const translatePath = useTranslatedPath(lang)
 
 const { entry } = Astro.props
+const { title, description, publishDate, img, img_alt, categories, tags } =
+    entry.data
 const { Content } = await entry.render()
 ---
 
-<BaseLayout title={entry.data.title} description={entry.data.description}>
+<BaseLayout title={title} description={description}>
     <div class="stack gap-20">
         <div class="stack gap-15">
-            <header class="border-b border-solid border-gray-200 pb-10">
-                <div class="wrapper stack gap-2">
-                    <AnimatedUnderline size="xs">
-                        <a
-                            class="hidden lg:flex lg:flex-row lg:gap-1"
-                            href={translatePath("/blog/")}
+            <header class="flex w-full flex-col px-10">
+                <AnimatedUnderline size="xs">
+                    <a
+                        class="hidden items-center lg:flex lg:flex-row lg:gap-1"
+                        href={translatePath("/blog/")}
+                    >
+                        <span class="">
+                            <Icon icon="arrow-left" />
+                        </span>
+                        {t("blog.post.go_back")}
+                    </a>
+                </AnimatedUnderline>
+                <div class="text-center md:text-left mx-auto w-full max-w-[49em]">
+                    <h1 class="w-full text-5xl">{title}</h1>
+                    <div
+                        class="mx-auto mt-3 flex w-full flex-col items-center gap-6 p-2 md:flex-row md:gap-10"
+                    >
+                        <time
+                            datetime={publishDate.toISOString().split("T")[0]}
+                            class="text-gray-500"
+                            >{formatDateRespectingLang(publishDate, lang)}</time
                         >
-                            <span class="my-auto">
-                                <Icon icon="arrow-left" />
-                            </span>
-                            {t("blog.post.go_back")}
-                        </a>
-                    </AnimatedUnderline>
-                    <Hero title={entry.data.title} align="start">
-                        <div
-                            class="flex flex-col items-center justify-between gap-6 p-2 md:flex-row md:gap-10"
-                        >
-                            <div class="flex basis-1/4 gap-2">
-                                {entry.data.tags.map((t) => <Pill>{t}</Pill>)}
-                            </div>
-                            <p class="line-clamp-3 basis-3/4 text-xl">
-                                {entry.data.description}
-                            </p>
+                        <div class="flex basis-1/4 gap-2">
+                            {categories.map((t) => <Pill size="sm">{t}</Pill>)}
                         </div>
-                    </Hero>
-                </div>
-            </header>
-            <main class="wrapper">
-                <div class="stack content gap-10">
-                    <!-- { -->
-                    <!--     entry.data.img && ( -->
-                    <!--         <img -->
-                    <!--             src={entry.data.img} -->
-                    <!--             alt={entry.data.img_alt || ""} -->
-                    <!--         /> -->
-                    <!--     ) -->
-                    <!-- } -->
-                    <div class="content">
-                        <Content />
                     </div>
                 </div>
-            </main>
+            </header>
+            <article
+                class="prose prose-gray mx-auto my-5 lg:prose-xl prose-img:rounded-xl prose-img:shadow-lg px-5"
+            >
+                {
+                    img && (
+                        <Image
+                            src={img}
+                            alt={img_alt || ""}
+                            width={200}
+                            class="aspect-[2] w-full"
+                        />
+                    )
+                }
+                <Content />
+                <div class="justify-center md:justify-normal flex flex-row mt-16 gap-3">
+                    {tags && tags.map((tag) => <Pill size="md" noColor={true} class="bg-gray-50 text-gray-600">{tag}</Pill>)}
+                </div>
+            </article>
             <ContactCTA />
         </div>
     </div>
 </BaseLayout>
-<style>
-    .details {
-        display: flex;
-        flex-direction: column;
-        padding: 0.5rem;
-        gap: 1.5rem;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .description {
-        font-size: var(--text-lg);
-        max-width: 54ch;
-    }
-
-    .content {
-        max-width: 65ch;
-        margin-inline: auto;
-    }
-
-    .content > :global(* + *) {
-        margin-top: 1rem;
-    }
-
-    .content :global(h1),
-    .content :global(h2),
-    .content :global(h3),
-    .content :global(h4),
-    .content :global(h5) {
-        margin: 1.5rem 0;
-    }
-
-    .content :global(img) {
-        border-radius: 1.5rem;
-        box-shadow: var(--shadow-sm);
-        background: var(--gradient-subtle);
-        border: 1px solid var(--gray-800);
-    }
-
-    .content :global(blockquote) {
-        font-size: var(--text-lg);
-        font-family: var(--font-brand);
-        font-weight: 600;
-        line-height: 1.1;
-        padding-inline-start: 1.5rem;
-        border-inline-start: 0.25rem solid var(--accent-dark);
-        color: var(--gray-0);
-    }
-
-    .back-link,
-    .content :global(a) {
-        text-decoration: 1px solid underline transparent;
-        text-underline-offset: 0.25em;
-        transition: text-decoration-color var(--theme-transition);
-    }
-
-    .back-link:hover,
-    .back-link:focus,
-    .content :global(a:hover),
-    .content :global(a:focus) {
-        text-decoration-color: currentColor;
-    }
-
-    @media (min-width: 48em) {
-        .content :global(blockquote) {
-            font-size: var(--text-2xl);
-        }
-    }
-</style>
