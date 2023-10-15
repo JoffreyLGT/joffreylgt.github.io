@@ -120,7 +120,7 @@ export const ui = {
     "home.work.title": "Réalisations récentes",
     "home.work.subtitle": "Jetez un œil sur quelques un de mes projets récents.",
     
-    "home.blog.title": "Articles",
+    "home.blog.title": "Publications récentes",
     "home.blog.subtitle": "J'aime partager mes pensées avec mes pairs. Parfois des remarques, d'autres fois des solutions à certains problèmes que j'ai rencontré.",
 
     "home.skill.title": "Compétences clés",

@@ -27,16 +27,23 @@ import Hero from "@components/Hero.astro"
 import Icon from "@components/Icon.astro"
 import Pill from "@components/Pill.astro"
 import PortfolioPreview from "@components/PortfolioPreview.astro"
+import BlogPreview from "@components/BlogPreview.astro"
 
 // Page section components
 import ContactCTA from "@components/ContactCTA.astro"
 import Skills from "@components/Skills.astro"
 
-// Content Fetching: List four most recent work projects in the current language
+// Content Fetching: four most recent work projects in the current language
 const projects = (await getCollection("work"))
     .filter((project) => project.slug.startsWith(lang))
     .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
     .slice(0, 4)
+
+// Content Fetching: three most recent posts in the current language
+const posts = (await getCollection("blog"))
+    .filter((post) => post.slug.startsWith(lang))
+    .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
+    .slice(0, 6)
 
 // Full Astro Component Syntax:
 // https://docs.astro.build/core-concepts/astro-components/
@@ -107,6 +114,29 @@ const projects = (await getCollection("work"))
                         {t("home.button.view_all")}
                         <Icon icon="arrow-right" size="1.2em" />
                     </CallToAction>
+                </div>
+            </section>
+
+            <section class="with-background with-cta">
+                <div class="flex flex-row justify-between">
+                    <header class="section-header stack gap-2 lg:gap-4">
+                        <h3>{t("home.blog.title")}</h3>
+                    </header>
+                    <div class="cta">
+                        <CallToAction href={translatePath("/blog/")}>
+                            {t("home.button.view_all")}
+                            <Icon icon="arrow-right" size="1.2em" />
+                        </CallToAction>
+                    </div>
+                </div>
+                <p class="mt-4 text-xl text-gray-500">
+                    {t("home.blog.subtitle")}
+                </p>
+
+                <div
+                    class="mx-auto mt-20 grid w-full max-w-2xl grid-cols-1 gap-x-8 gap-y-12 border-gray-200 md:grid-cols-2 lg:max-w-none lg:grid-cols-3"
+                >
+                    {posts.map((post) => <BlogPreview post={post} />)}
                 </div>
             </section>
 

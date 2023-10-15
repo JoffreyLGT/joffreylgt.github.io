@@ -12,7 +12,6 @@ export async function getStaticPaths() {
 import {
     getLangFromUrl,
     useTranslations,
-    useTranslatedPath,
     getSlugWithoutLang,
 } from "@i18n/utils"
 
@@ -26,7 +25,6 @@ import BaseLayout from "@layouts/BaseLayout.astro"
 import ContactCTA from "@components/ContactCTA.astro"
 import BlogPreview from "@components/BlogPreview.astro"
 import Hero from "@components/Hero.astro"
-import Grid from "@components/Grid.astro"
 
 // Get all articles in the selected language
 const posts_current_lang = (await getCollection("blog"))
