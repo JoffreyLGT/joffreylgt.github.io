@@ -54,43 +54,41 @@ const posts = (await getCollection("blog"))
     description={t("home.document.description")}
 >
     <div class="stack gap-20 lg:gap-48">
-        <div class="wrapper stack gap-8 lg:gap-20">
-            <header class="hero">
-                <Hero
-                    title={t("home.hero.title")}
-                    tagline={t("home.hero.tagline")}
-                    align="start"
-                    class="text-4xl"
-                    titleClass="md:text-4xl"
-                >
-                    <div class="roles">
-                        <Pill>
-                            <Icon icon="code" size="1.33em" />
-                            {t("home.hero.roles.first")}
-                        </Pill>
-                        <Pill>
-                            <Icon icon="opened-book" size="1.33em" />
-                            {t("home.hero.roles.second")}
-                        </Pill>
-                        <Pill>
-                            <Icon icon="film-slate" size="1.33em" />
-                            {t("home.hero.roles.third")}
-                        </Pill>
-                    </div>
-                </Hero>
+        <!-- <div class="wrapper stack gap-8 lg:gap-20"> -->
+        <!--     <header class="hero"> -->
+        <!--         <Hero -->
+        <!--             title={t("home.hero.title")} -->
+        <!--             tagline={t("home.hero.tagline")} -->
+        <!--             align="start" -->
+        <!--         > -->
+        <!--             <div class="roles"> -->
+        <!--                 <Pill> -->
+        <!--                     <Icon icon="code" size="1.33em" /> -->
+        <!--                     {t("home.hero.roles.first")} -->
+        <!--                 </Pill> -->
+        <!--                 <Pill> -->
+        <!--                     <Icon icon="opened-book" size="1.33em" /> -->
+        <!--                     {t("home.hero.roles.second")} -->
+        <!--                 </Pill> -->
+        <!--                 <Pill> -->
+        <!--                     <Icon icon="film-slate" size="1.33em" /> -->
+        <!--                     {t("home.hero.roles.third")} -->
+        <!--                 </Pill> -->
+        <!--             </div> -->
+        <!--         </Hero> -->
+        <!---->
+        <!--         <img -->
+        <!--             alt={t("home.hero.img_alt")} -->
+        <!--             width="480" -->
+        <!--             height="620" -->
+        <!--             src="/assets/portrait.jpg" -->
+        <!--         /> -->
+        <!--     </header> -->
+        <!---->
+        <!--     <Skills /> -->
+        <!-- </div> -->
 
-                <img
-                    alt={t("home.hero.img_alt")}
-                    width="480"
-                    height="620"
-                    src="/assets/portrait.jpg"
-                />
-            </header>
-
-            <Skills />
-        </div>
-
-        <main class="wrapper stack gap-20 lg:gap-48">
+        <main class="wrapper stack gap-20 lg:gap-48 w-full">
             <section class="section with-background with-cta">
                 <header class="section-header stack gap-2 lg:gap-4">
                     <h3>{t("home.work.title")}</h3>
@@ -117,56 +115,53 @@ const posts = (await getCollection("blog"))
                 </div>
             </section>
 
-            <section class="with-background with-cta">
-                <div class="flex flex-row justify-between">
-                    <header class="section-header stack gap-2 lg:gap-4">
-                        <h3>{t("home.blog.title")}</h3>
+            <section class="grid auto-rows-min grid-cols-1 gap-8 lg:auto-cols-auto">
+                    <header class="lg:order-1 text-center">
+                        <h3 class="text-4xl">{t("home.blog.title")}</h3>
+                        <p class="mt-2 lg:mt-4 text-xl lg:order-3 text-gray-500 lg:col-span-2">
+                            {t("home.blog.subtitle")}
+                        </p>
                     </header>
-                    <div class="cta">
+                    <div class="order-last lg:order-2">
                         <CallToAction href={translatePath("/blog/")}>
                             {t("home.button.view_all")}
                             <Icon icon="arrow-right" size="1.2em" />
                         </CallToAction>
                     </div>
-                </div>
-                <p class="mt-4 text-xl text-gray-500">
-                    {t("home.blog.subtitle")}
-                </p>
-
-                <div
-                    class="mx-auto mt-20 grid w-full max-w-2xl grid-cols-1 gap-x-8 gap-y-12 border-gray-200 md:grid-cols-2 lg:max-w-none lg:grid-cols-3"
-                >
-                    {posts.map((post) => <BlogPreview post={post} />)}
-                </div>
+                    <div
+                        class="mx-auto grid w-full lg:order-last max-w-2xl lg:col-span-2 grid-cols-1 gap-x-8 gap-y-12 border-gray-200 md:grid-cols-2 lg:max-w-none"
+                    >
+                        {posts.map((post) => <BlogPreview post={post} />)}
+                    </div>
             </section>
 
-            <section class="section with-background bg-variant">
-                <header class="section-header stack gap-2 lg:gap-4">
-                    <h3>{t("home.skill.title")}</h3>
-                    <p>{t("home.skill.subtitle")}</p>
-                </header>
-                <!-- 
-                    TODO @joffreylgt: rework how skills are displayed.
-                      They should have properties like "certification" to display a link to a certification page, and if needed translations.
-                -->
-                <div class="gallery">
-                    <Grid variant="small">
-                        {
-                            [
-                                t("home.skill.pm"),
-                                t("home.skill.dev"),
-                                t("home.skill.ai"),
-                                t("home.skill.ops"),
-                                t("home.skill.rpa"),
-                            ].map((brand) => (
-                                <li class="mention-card">
-                                    <p>{brand}</p>
-                                </li>
-                            ))
-                        }
-                    </Grid>
-                </div>
-            </section>
+            <!-- <section class="section with-background bg-variant"> -->
+            <!--     <header class="section-header stack gap-2 lg:gap-4"> -->
+            <!--         <h3>{t("home.skill.title")}</h3> -->
+            <!--         <p>{t("home.skill.subtitle")}</p> -->
+            <!--     </header> -->
+            <!--     <!--  -->
+            <!--         TODO @joffreylgt: rework how skills are displayed. -->
+            <!--           They should have properties like "certification" to display a link to a certification page, and if needed translations. -->
+            <!--     -->
+            <!--     <div class="gallery"> -->
+            <!--         <Grid variant="small"> -->
+            <!--             { -->
+            <!--                 [ -->
+            <!--                     t("home.skill.pm"), -->
+            <!--                     t("home.skill.dev"), -->
+            <!--                     t("home.skill.ai"), -->
+            <!--                     t("home.skill.ops"), -->
+            <!--                     t("home.skill.rpa"), -->
+            <!--                 ].map((brand) => ( -->
+            <!--                     <li class="mention-card"> -->
+            <!--                         <p>{brand}</p> -->
+            <!--                     </li> -->
+            <!--                 )) -->
+            <!--             } -->
+            <!--         </Grid> -->
+            <!--     </div> -->
+            <!-- </section> -->
         </main>
 
         <ContactCTA />
@@ -193,7 +188,7 @@ const posts = (await getCollection("blog"))
         box-shadow: var(--shadow-md);
     }
 
-    @media (min-width: 50em) {
+    @media (min-width: 48em) {
         .hero {
             display: grid;
             grid-template-columns: 6fr 4fr;
@@ -261,7 +256,7 @@ const posts = (await getCollection("blog"))
         font-size: var(--text-2xl);
     }
 
-    @media (min-width: 50em) {
+    @media (min-width: 48em) {
         .section {
             grid-template-columns: repeat(4, 1fr);
             grid-template-areas: "header header header header" "gallery gallery gallery gallery";
@@ -310,7 +305,7 @@ const posts = (await getCollection("blog"))
         box-shadow: var(--shadow-sm);
     }
 
-    @media (min-width: 50em) {
+    @media (min-width: 48em) {
         .mention-card {
             border-radius: 1.5rem;
             height: 9.5rem;
