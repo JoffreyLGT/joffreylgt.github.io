@@ -99,13 +99,13 @@ import Hero from "@components/Hero.astro"
         display: flex;
         flex-direction: column;
         gap: 0.5rem;
-        color: var(--gray-200);
+        @apply text-slate-700 dark:text-slate-300;
     }
 
     .section-title {
         grid-column-start: 1;
         font-size: var(--text-xl);
-        color: var(--gray-0);
+        @apply text-slate-950 dark:text-slate-50;
     }
 
     .content {

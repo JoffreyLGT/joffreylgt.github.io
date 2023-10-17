@@ -233,8 +233,9 @@ const iconLinks: {
         gap: 0.5rem;
         align-items: center;
         line-height: 1.1;
-        color: var(--gray-0);
         text-decoration: none;
+
+        @apply text-slate-950 dark:text-slate-50;
     }
 
     .menu-button {
@@ -244,13 +245,13 @@ const iconLinks: {
         border-radius: 999rem;
         padding: 0.5rem;
         font-size: 1.5rem;
-        color: var(--gray-300);
+        @apply text-slate-600 dark:text-slate-400;
         background: radial-gradient(var(--gray-900), var(--gray-800) 150%);
         box-shadow: var(--shadow-md);
     }
 
     .menu-button[aria-expanded="true"] {
-        color: var(--gray-0);
+        @apply text-slate-950 dark:text-slate-50;
         background: linear-gradient(180deg, var(--gray-600), transparent),
             radial-gradient(var(--gray-900), var(--gray-800) 150%);
     }
@@ -283,18 +284,17 @@ const iconLinks: {
         line-height: 1.2;
         list-style: none;
         padding: 2rem;
-        background-color: var(--gray-999);
-        border-bottom: 1px solid var(--gray-800);
+        @apply bg-slate-50 dark:bg-slate-950 border-b border-solid border-slate-200 dark:border-slate-800;
     }
 
     .link {
         display: inline-block;
-        color: var(--gray-300);
+        @apply text-slate-600 dark:text-slate-400;
         text-decoration: none;
     }
 
     .link.active {
-        color: var(--gray-0);
+        @apply text-slate-950 dark:text-slate-50;
     }
 
     .menu-footer {
@@ -305,7 +305,7 @@ const iconLinks: {
         justify-content: space-between;
         gap: 0.75rem;
         padding: 1.5rem 2rem 1.5rem 1.5rem;
-        background-color: var(--gray-999);
+        @apply bg-slate-50 dark:bg-slate-950;
         border-radius: 0 0 0.75rem 0.75rem;
         box-shadow: var(--shadow-lg);
     }
@@ -387,7 +387,7 @@ const iconLinks: {
 
         .link:hover,
         .link:focus {
-            color: var(--gray-100);
+            @apply text-slate-900 dark:text-slate-200;
             background-color: var(--accent-subtle-overlay);
         }
 
@@ -402,8 +402,8 @@ const iconLinks: {
             justify-self: flex-end;
             align-items: center;
             padding: 0;
-            background-color: transparent;
             box-shadow: none;
+            @apply bg-transparent dark:bg-transparent;
         }
 
         .socials {
