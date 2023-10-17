@@ -48,7 +48,7 @@ import Icon from "./Icon.astro"
     :global(.dark) .icon.dark,
     :global(html:not(.dark)) .icon.light,
     button[aria-pressed="false"] .icon.light {
-        color: var(--accent-text-over);
+        @apply text-slate-50;
     }
 
     @media (prefers-reduced-motion: no-preference) {
