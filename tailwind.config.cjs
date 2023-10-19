@@ -4,15 +4,16 @@ module.exports = {
     darkMode: "class",
     theme: {
         fontSize: {
-            sm: "0.875rem",
-            base: "1rem",
-            md: "1.125rem",
-            lg: "1.25rem",
-            xl: "1.625rem",
-            "2xl": "2.125rem",
-            "3xl": "2.625rem",
-            "4xl": "3.5rem",
-            "5xl": "4.5rem",
+            xs: "var(--text-xs)",
+            sm: "var(--text-sm)",
+            base: "var(--text-base)",
+            md: "var(--text-md)",
+            lg: "var(--text-lg)",
+            xl: "var(--text-xl)",
+            "2xl": "var(--text-2xl)",
+            "3xl": "var(--text-3xl)",
+            "4xl": "var(--text-4xl)",
+            "5xl": "var(--text-5xl)",
         },
         extend: {
             // Important notice: the styles directly declared in the website
@@ -45,8 +46,8 @@ module.exports = {
                     regular: "rgb(var(--accent-regular)/<alpha-value>)",
                     dark: "rgb(var(--accent-dark)/<alpha-value>)",
                     overlay: "rgb(var(--accent-overlay)/<alpha-value>)",
-                    subtleOverlay: "rgb(var(--accent-subtle-overlay)/<alpha-value>)",
-                    textOver: "rgb(var(--accent-text-over)/<alpha-value>)",
+                    "subtle-overlay": "rgb(var(--accent-subtle-overlay)/<alpha-value>)",
+                    "text-over": "rgb(var(--accent-text-over)/<alpha-value>)",
                 },
                 link: "rgb(var(--link-color)/<alpha-value>)"
             },
