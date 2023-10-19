@@ -94,16 +94,16 @@
 
     :root.dark {
         --gray-0: 255 255 255;
-        --gray-50: #f3f4f7;
-        --gray-100: #e3e6ee;
-        --gray-200: #c3cadb;
-        --gray-300: #a3acc8;
-        --gray-400: #8490b5;
-        --gray-500: #6474a2;
-        --gray-600: #505d84;
-        --gray-700: #3d4663;
-        --gray-800: #283044;
-        --gray-900: #141925;
+        --gray-50: 243 244 247;
+        --gray-100: 227 230 238;
+        --gray-200: 195 202 219;
+        --gray-300: 163 172 200;
+        --gray-400: 132 144 181;
+        --gray-500: 100 116 162;
+        --gray-600: 80 93 132;
+        --gray-700: 61 70 99;
+        --gray-800: 40 48 68;
+        --gray-900: 20 25 37;
         --gray-999-basis: 225, 31%, 5%;
         --gray-999: 9 11 17;
 
@@ -116,7 +116,7 @@
 
         --link-color: var(--accent-dark);
 
-        --gradient-stop-1: #4c11c6;
+        --gradient-stop-1: 76 17 198;
         --gradient-subtle: linear-gradient(
             150deg,
             rgb(var(--gray-900)) 19%,
