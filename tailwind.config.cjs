@@ -36,11 +36,9 @@ module.exports = {
                     700: "rgb(var(--gray-700)/<alpha-value>)",
                     800: "rgb(var(--gray-800)/<alpha-value>)",
                     900: "rgb(var(--gray-900)/<alpha-value>)",
-                    999: {
-                        basis: "rgb(var(--gray-999-basis)/<alpha-value>)",
-                        40: "rgb(var(--gray-999_40)/<alpha-value>)",
-                        999: "rgb(var(--gray-999)/<alpha-value>)",
-                    },
+                    "999-basis": "rgb(var(--gray-999-basis)/<alpha-value>)",
+                    "999_40": "rgb(var(--gray-999_40)/<alpha-value>)",
+                    999: "rgb(var(--gray-999)/<alpha-value>)",
                 },
                 accent: {
                     light: "rgb(var(--accent-light)/<alpha-value>)",
