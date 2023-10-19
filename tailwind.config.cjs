@@ -3,6 +3,17 @@ module.exports = {
     content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
     darkMode: "class",
     theme: {
+        fontSize: {
+            sm: "0.875rem",
+            base: "1rem",
+            md: "1.125rem",
+            lg: "1.25rem",
+            xl: "1.625rem",
+            "2xl": "2.125rem",
+            "3xl": "2.625rem",
+            "4xl": "3.5rem",
+            "5xl": "4.5rem",
+        },
         extend: {
             // Important notice: the styles directly declared in the website
             // are using hard coded values (50em and 60em) due to css limitation
