@@ -56,6 +56,11 @@ module.exports = {
                 "gradient-accent-orange": "var(--gradient-accent-orange)",
                 "gradient-stroke": "var(--gradient-stroke)",
             },
+            boxShadow: {
+                "t-sm": "var(--shadow-sm)",
+                "t-md": "var(--shadow-md)",
+                "t-lg": "var(--shadow-lg)",
+            },
         },
     },
     plugins: [],
