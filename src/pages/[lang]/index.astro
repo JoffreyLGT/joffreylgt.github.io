@@ -207,7 +207,7 @@ const projects = (await getCollection("work"))
         background:
             url("/assets/backgrounds/noise.png") top center/220px repeat,
             var(--hero-bg) center center / var(--bg-gradient-size) no-repeat,
-            var(--gray-999);
+            rgb(var(--gray-999));
         background-blend-mode: overlay, normal, normal, normal;
         mix-blend-mode: var(--bg-blend-mode);
         z-index: -1;
@@ -222,7 +222,7 @@ const projects = (await getCollection("work"))
         text-align: center;
         max-width: 50ch;
         font-size: var(--text-md);
-        color: var(--gray-300);
+        color: rgb(var(--gray-300));
     }
 
     .section-header h3 {
@@ -271,9 +271,9 @@ const projects = (await getCollection("work"))
         justify-content: center;
         align-items: center;
         text-align: center;
-        border: 1px solid var(--gray-800);
+        border: 1px solid rgb(var(--gray-800));
         border-radius: 1.5rem;
-        color: var(--gray-300);
+        color: rgb(var(--gray-300));
         background: var(--gradient-subtle);
         box-shadow: var(--shadow-sm);
     }
