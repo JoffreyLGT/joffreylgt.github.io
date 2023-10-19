@@ -4,8 +4,34 @@ module.exports = {
     darkMode: "class",
     theme: {
         extend: {
-            colors:{
-                accent:{
+            // Important notice: the styles directly declared in the website
+            // are using hard coded values (50em and 60em) due to css limitation
+            // with @media queries not being able to use css variables.
+            // Those CSS styles will be removed incrementaly in the future.
+            screens: {
+                "laptop": "50em",
+                "desktop": "60em",
+            },
+            colors: {
+                themegray: {
+                    0: "rgb(var(--gray-0)/<alpha-value>)",
+                    50: "rgb(var(--gray-50)/<alpha-value>)",
+                    100: "rgb(var(--gray-100)/<alpha-value>)",
+                    200: "rgb(var(--gray-200)/<alpha-value>)",
+                    300: "rgb(var(--gray-300)/<alpha-value>)",
+                    400: "rgb(var(--gray-400)/<alpha-value>)",
+                    500: "rgb(var(--gray-500)/<alpha-value>)",
+                    600: "rgb(var(--gray-600)/<alpha-value>)",
+                    700: "rgb(var(--gray-700)/<alpha-value>)",
+                    800: "rgb(var(--gray-800)/<alpha-value>)",
+                    900: "rgb(var(--gray-900)/<alpha-value>)",
+                    999: {
+                        basis: "rgb(var(--gray-999-basis)/<alpha-value>)",
+                        40: "rgb(var(--gray-999_40)/<alpha-value>)",
+                        999: "rgb(var(--gray-999)/<alpha-value>)",
+                    },
+                },
+                accent: {
                     light: "rgb(var(--accent-light)/<alpha-value>)",
                     regular: "rgb(var(--accent-regular)/<alpha-value>)",
                     dark: "rgb(var(--accent-dark)/<alpha-value>)",
