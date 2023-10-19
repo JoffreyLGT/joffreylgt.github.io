@@ -47,8 +47,14 @@ module.exports = {
                     overlay: "rgb(var(--accent-overlay)/<alpha-value>)",
                     subtleOverlay: "rgb(var(--accent-subtle-overlay)/<alpha-value>)",
                     textOver: "rgb(var(--accent-text-over)/<alpha-value>)",
-
                 },
+                link: "rgb(var(--link-color)/<alpha-value>)"
+            },
+            backgroundImage: {
+                "gradient-subtle": "var(--gradient-subtle)",
+                "gradient-accent": "var(--gradient-accent)",
+                "gradient-accent-orange": "var(--gradient-accent-orange)",
+                "gradient-stroke": "var(--gradient-stroke)",
             },
         },
     },
