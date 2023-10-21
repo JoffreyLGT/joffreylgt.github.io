@@ -57,7 +57,7 @@ const { Content } = await entry.render()
             <header class="flex w-full flex-col px-10">
                 <AnimatedUnderline size="xs">
                     <a
-                        class="hidden items-center lg:flex lg:flex-row lg:gap-1"
+                        class="hidden items-center text-accent-regular lg:flex lg:flex-row lg:gap-1"
                         href={translatePath("/blog/")}
                     >
                         <span class="">
@@ -66,8 +66,8 @@ const { Content } = await entry.render()
                         {t("blog.post.go_back")}
                     </a>
                 </AnimatedUnderline>
-                <div class="text-center md:text-left mx-auto w-full max-w-[49em]">
-                    <h1 class="w-full text-5xl">{title}</h1>
+                <div class="mx-auto w-full text-center md:text-left">
+                    <h1 class="text-5xl">{title}</h1>
                     <div
                         class="mx-auto mt-3 flex w-full flex-col items-center gap-6 p-2 md:flex-row md:gap-10"
                     >
@@ -83,7 +83,7 @@ const { Content } = await entry.render()
                 </div>
             </header>
             <article
-                class="prose prose-gray mx-auto my-5 lg:prose-xl prose-img:rounded-xl prose-img:shadow-lg px-5"
+                class="prose prose-gray mx-auto my-5 px-5 lg:prose-xl prose-img:rounded-xl prose-img:shadow-lg"
             >
                 {
                     img && (
@@ -96,8 +96,21 @@ const { Content } = await entry.render()
                     )
                 }
                 <Content />
-                <div class="justify-center md:justify-normal flex flex-row mt-16 gap-3">
-                    {tags && tags.map((tag) => <Pill size="md" noColor={true} class="bg-gray-50 text-gray-600">{tag}</Pill>)}
+                <div
+                    class="mt-16 flex flex-row justify-center gap-3 md:justify-normal"
+                >
+                    {
+                        tags &&
+                            tags.map((tag) => (
+                                <Pill
+                                    size="md"
+                                    noColor={true}
+                                    class="bg-gray-50 text-gray-600"
+                                >
+                                    {tag}
+                                </Pill>
+                            ))
+                    }
                 </div>
             </article>
             <ContactCTA />

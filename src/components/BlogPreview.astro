@@ -20,28 +20,29 @@ const { data, slug } = Astro.props.post
 ---
 
 <article
-    class="group mx-auto w-full max-w-md overflow-hidden rounded-lg shadow transition hover:shadow-lg md:max-w-none"
+    class="group mx-auto w-full max-w-md overflow-hidden rounded-lg border border-t_gray-800 bg-t_gray-900 shadow-t_sm transition hover:shadow-t_md laptop:max-w-none"
 >
     <a href={translatePath(`/blog/${slug}`)}>
         <Image
             src={data.img}
             alt={data.img_alt}
-            height={254}
-            class="aspect-[2] w-full bg-gray-100 object-cover"
+            widths={[318, 375, 470, 662]}
+            class="aspect-[2.5] w-full object-cover"
+            loading="lazy"
         />
         <div class="p-4 sm:p-6">
             <div class="flex flex-wrap items-center gap-4 text-xs">
                 <time
                     datetime={data.publishDate.toISOString().split("T")[0]}
-                    class="text-gray-500"
+                    class="text-t_gray-400"
                     >{formatDateRespectingLang(data.publishDate, lang)}</time
                 >
-                <div class="flex flex-wrap items-start">
+                <div class="flex flex-wrap items-start gap-2">
                     {
                         data.categories.map((tag) => (
                             <Pill
                                 size="xs"
-                                class="bg-gray-50 text-gray-600"
+                                class="bg-accent-regular text-white"
                                 noColor={true}
                             >
                                 {tag}
@@ -51,14 +52,10 @@ const { data, slug } = Astro.props.post
                 </div>
             </div>
             <div class="relative flex-grow">
-                <h3
-                    class="mt-2 max-w-fit text-lg leading-6 text-gray-900 group-hover:text-gray-600"
-                >
+                <h3 class="mt-2 max-w-fit text-lg leading-6 text-t_gray-200">
                     {data.title}
                 </h3>
-                <p
-                    class="mt-2 line-clamp-3 font-sans text-sm/relaxed text-gray-600"
-                >
+                <p class="mt-2 line-clamp-3 font-sans text-t_gray-400">
                     {data.description}
                 </p>
             </div>

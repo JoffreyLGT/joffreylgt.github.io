@@ -54,41 +54,41 @@ const posts = (await getCollection("blog"))
     description={t("home.document.description")}
 >
     <div class="stack gap-20 lg:gap-48">
-        <!-- <div class="wrapper stack gap-8 lg:gap-20"> -->
-        <!--     <header class="hero"> -->
-        <!--         <Hero -->
-        <!--             title={t("home.hero.title")} -->
-        <!--             tagline={t("home.hero.tagline")} -->
-        <!--             align="start" -->
-        <!--         > -->
-        <!--             <div class="roles"> -->
-        <!--                 <Pill> -->
-        <!--                     <Icon icon="code" size="1.33em" /> -->
-        <!--                     {t("home.hero.roles.first")} -->
-        <!--                 </Pill> -->
-        <!--                 <Pill> -->
-        <!--                     <Icon icon="opened-book" size="1.33em" /> -->
-        <!--                     {t("home.hero.roles.second")} -->
-        <!--                 </Pill> -->
-        <!--                 <Pill> -->
-        <!--                     <Icon icon="film-slate" size="1.33em" /> -->
-        <!--                     {t("home.hero.roles.third")} -->
-        <!--                 </Pill> -->
-        <!--             </div> -->
-        <!--         </Hero> -->
-        <!---->
-        <!--         <img -->
-        <!--             alt={t("home.hero.img_alt")} -->
-        <!--             width="480" -->
-        <!--             height="620" -->
-        <!--             src="/assets/portrait.jpg" -->
-        <!--         /> -->
-        <!--     </header> -->
-        <!---->
-        <!--     <Skills /> -->
-        <!-- </div> -->
+        <div class="wrapper stack gap-8 lg:gap-20">
+            <header class="hero">
+                <Hero
+                    title={t("home.hero.title")}
+                    tagline={t("home.hero.tagline")}
+                    align="start"
+                >
+                    <div class="roles">
+                        <Pill>
+                            <Icon icon="code" size="1.33em" />
+                            {t("home.hero.roles.first")}
+                        </Pill>
+                        <Pill>
+                            <Icon icon="opened-book" size="1.33em" />
+                            {t("home.hero.roles.second")}
+                        </Pill>
+                        <Pill>
+                            <Icon icon="film-slate" size="1.33em" />
+                            {t("home.hero.roles.third")}
+                        </Pill>
+                    </div>
+                </Hero>
 
-        <main class="wrapper stack gap-20 lg:gap-48 w-full">
+                <img
+                    alt={t("home.hero.img_alt")}
+                    width="480"
+                    height="620"
+                    src="/assets/portrait.jpg"
+                />
+            </header>
+
+            <Skills />
+        </div>
+
+        <main class="wrapper stack w-full gap-20 lg:gap-48">
             <section class="section with-background with-cta">
                 <header class="section-header stack gap-2 lg:gap-4">
                     <h3>{t("home.work.title")}</h3>
@@ -109,59 +109,81 @@ const posts = (await getCollection("blog"))
 
                 <div class="cta">
                     <CallToAction href={translatePath("/work/")}>
-                        {t("home.button.view_all")}
+                        {t("home.work.view_all")}
                         <Icon icon="arrow-right" size="1.2em" />
                     </CallToAction>
                 </div>
             </section>
 
-            <section class="grid auto-rows-min grid-cols-1 gap-8 lg:auto-cols-auto">
-                    <header class="lg:order-1 text-center">
-                        <h3 class="text-4xl">{t("home.blog.title")}</h3>
-                        <p class="mt-2 lg:mt-4 text-xl lg:order-3 text-gray-500 lg:col-span-2">
-                            {t("home.blog.subtitle")}
-                        </p>
-                    </header>
-                    <div class="order-last lg:order-2">
-                        <CallToAction href={translatePath("/blog/")}>
-                            {t("home.button.view_all")}
-                            <Icon icon="arrow-right" size="1.2em" />
-                        </CallToAction>
-                    </div>
-                    <div
-                        class="mx-auto grid w-full lg:order-last max-w-2xl lg:col-span-2 grid-cols-1 gap-x-8 gap-y-12 border-gray-200 md:grid-cols-2 lg:max-w-none"
-                    >
-                        {posts.map((post) => <BlogPreview post={post} />)}
-                    </div>
+            <section
+                class="grid auto-rows-min grid-cols-1 laptop:auto-cols-auto"
+            >
+                <header
+                    class="order-1 my-auto text-center text-2xl laptop:text-start laptop:text-4xl"
+                >
+                    <h3 class="text-2xl laptop:text-4xl">
+                        {t("home.blog.title")}
+                    </h3>
+                </header>
+                <p
+                    class="order-2 mt-2 text-center text-md laptop:col-span-2 laptop:mt-4 laptop:text-start laptop:text-lg"
+                >
+                    {t("home.blog.subtitle")}
+                </p>
+                <div
+                    class="order-last mt-8 laptop:order-1 laptop:col-start-2 laptop:mt-0"
+                >
+                    <CallToAction href={translatePath("/blog/")}>
+                        {t("home.blog.view_all")}
+                        <Icon icon="arrow-right" size="1.2em" />
+                    </CallToAction>
+                </div>
+                <div
+                    class="order-3 mx-auto mt-8 grid w-full max-w-2xl grid-cols-1 gap-x-8 gap-y-12 laptop:order-last laptop:col-span-2 laptop:max-w-none laptop:grid-cols-2"
+                >
+                    {
+                        posts.map((post, i) => {
+                            if (i % 2 !== 0) {
+                                return (
+                                    <div class="laptop:translate-y-28">
+                                        <BlogPreview post={post} />
+                                    </div>
+                                )
+                            } else {
+                                return <BlogPreview post={post} />
+                            }
+                        })
+                    }
+                </div>
             </section>
 
-            <!-- <section class="section with-background bg-variant"> -->
-            <!--     <header class="section-header stack gap-2 lg:gap-4"> -->
-            <!--         <h3>{t("home.skill.title")}</h3> -->
-            <!--         <p>{t("home.skill.subtitle")}</p> -->
-            <!--     </header> -->
-            <!--     <!--  -->
-            <!--         TODO @joffreylgt: rework how skills are displayed. -->
-            <!--           They should have properties like "certification" to display a link to a certification page, and if needed translations. -->
-            <!--     -->
-            <!--     <div class="gallery"> -->
-            <!--         <Grid variant="small"> -->
-            <!--             { -->
-            <!--                 [ -->
-            <!--                     t("home.skill.pm"), -->
-            <!--                     t("home.skill.dev"), -->
-            <!--                     t("home.skill.ai"), -->
-            <!--                     t("home.skill.ops"), -->
-            <!--                     t("home.skill.rpa"), -->
-            <!--                 ].map((brand) => ( -->
-            <!--                     <li class="mention-card"> -->
-            <!--                         <p>{brand}</p> -->
-            <!--                     </li> -->
-            <!--                 )) -->
-            <!--             } -->
-            <!--         </Grid> -->
-            <!--     </div> -->
-            <!-- </section> -->
+            <section class="section with-background bg-variant">
+                <header class="section-header stack gap-2 lg:gap-4">
+                    <h3>{t("home.skill.title")}</h3>
+                    <p>{t("home.skill.subtitle")}</p>
+                </header>
+                <!-- 
+                    TODO @joffreylgt: rework how skills are displayed.
+                      They should have properties like "certification" to display a link to a certification page, and if needed translations.
+                -->
+                <div class="gallery">
+                    <Grid variant="small">
+                        {
+                            [
+                                t("home.skill.pm"),
+                                t("home.skill.dev"),
+                                t("home.skill.ai"),
+                                t("home.skill.ops"),
+                                t("home.skill.rpa"),
+                            ].map((brand) => (
+                                <li class="mention-card">
+                                    <p>{brand}</p>
+                                </li>
+                            ))
+                        }
+                    </Grid>
+                </div>
+            </section>
         </main>
 
         <ContactCTA />
@@ -188,7 +210,7 @@ const posts = (await getCollection("blog"))
         box-shadow: var(--shadow-md);
     }
 
-    @media (min-width: 48em) {
+    @media (min-width: 50em) {
         .hero {
             display: grid;
             grid-template-columns: 6fr 4fr;
@@ -256,7 +278,7 @@ const posts = (await getCollection("blog"))
         font-size: var(--text-2xl);
     }
 
-    @media (min-width: 48em) {
+    @media (min-width: 50em) {
         .section {
             grid-template-columns: repeat(4, 1fr);
             grid-template-areas: "header header header header" "gallery gallery gallery gallery";
@@ -305,7 +327,7 @@ const posts = (await getCollection("blog"))
         box-shadow: var(--shadow-sm);
     }
 
-    @media (min-width: 48em) {
+    @media (min-width: 50em) {
         .mention-card {
             border-radius: 1.5rem;
             height: 9.5rem;

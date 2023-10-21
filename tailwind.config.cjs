@@ -25,7 +25,7 @@ module.exports = {
                 "desktop": "60em",
             },
             colors: {
-                "t-gray": {
+                "t_gray": {
                     0: "rgb(var(--gray-0)/<alpha-value>)",
                     50: "rgb(var(--gray-50)/<alpha-value>)",
                     100: "rgb(var(--gray-100)/<alpha-value>)",
@@ -58,9 +58,9 @@ module.exports = {
                 "gradient-stroke": "var(--gradient-stroke)",
             },
             boxShadow: {
-                "t-sm": "var(--shadow-sm)",
-                "t-md": "var(--shadow-md)",
-                "t-lg": "var(--shadow-lg)",
+                "t_sm": "var(--shadow-sm)",
+                "t_md": "var(--shadow-md)",
+                "t_lg": "var(--shadow-lg)",
             },
             fontFamily: {
                 system: ["var(--font-system)"],

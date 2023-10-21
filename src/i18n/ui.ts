@@ -52,14 +52,14 @@ export const ui = {
     "home.skills.top3.title": "Robotics",
     "home.skills.top3.caption": "Process analysis to identify possible automation. Development and release of robots in a secured environment.",
 
-    "home.button.view_all": "View all",
-
     "home.work.title": "Featured projects",
     "home.work.subtitle": "Here is a sample of my recent projects.",
+    "home.work.view_all": "Projects",
     
     "home.blog.title": "Featured articles",
     "home.blog.subtitle": "I love to share some of my thoughts with my pairs. Sometimes, they are only remarks. Other times, they are solutions to issues I faced that could help others.",
-
+    "home.blog.view_all": "Blog",
+    
     "home.skill.title": "Key expertise",
     "home.skill.subtitle": "My passion regarding technology pushes me to always learn new things. Here is a selection of skills I use daily.",
     "home.skill.pm": "Project management",
@@ -115,13 +115,13 @@ export const ui = {
     "home.skills.top3.title": "Robotique",
     "home.skills.top3.caption": "Analyse des processus et identification des parties automatisables. Développement et mise en production des robots.",
 
-    "home.button.view_all": "Consulter la liste",
-
     "home.work.title": "Réalisations récentes",
     "home.work.subtitle": "Jetez un œil sur quelques un de mes projets récents.",
+    "home.work.view_all": "Projets",
     
     "home.blog.title": "Publications récentes",
     "home.blog.subtitle": "J'aime partager mes pensées avec mes pairs. Parfois des remarques, d'autres fois des solutions à certains problèmes que j'ai rencontré.",
+    "home.blog.view_all": "Blog",
 
     "home.skill.title": "Compétences clés",
     "home.skill.subtitle": "Ma passion pour la technologie me pousse toujours à apprendre de nouvelles choses. Voici une sélection de compétences que j'utilise au quotidien :",

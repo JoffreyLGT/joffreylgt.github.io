@@ -8,28 +8,36 @@ interface Props {
 const { size = "nm", class: extraClasses = "", noColor = false } = Astro.props
 ---
 
-<div
-    class={`${noColor ? "" : "pill-colors"} ${
-        size == "xs" ? "pill-xs" : size == "sm" ? "pill-sm " : "pill-md"
-    } pill ${extraClasses}`}
->
-    <slot />
-</div>
-
-<style>
-    .pill-xs {
-        @apply px-3 py-1.5 text-xs font-medium;
-    }
-    .pill-md {
-        @apply px-4 py-2 text-lg leading-snug;
-    }
-    .pill-sm {
-        @apply px-3 py-1.5 text-sm font-medium leading-snug;
-    }
-    .pill-colors {
-        @apply border border-solid border-accent-regular bg-accent-regular text-accent-text-over;
-    }
-    .pill {
-        @apply flex gap-2 whitespace-nowrap rounded-full;
-    }
-</style>
+{
+    size === "xs" ? (
+        <div
+            class={`${
+                noColor
+                    ? ""
+                    : "border border-solid border-accent-regular bg-accent-regular text-accent-text-over"
+            } flex gap-2 whitespace-nowrap rounded-full px-3 py-1.5 text-xs font-medium ${extraClasses}`}
+        >
+            <slot />
+        </div>
+    ) : size === "sm" ? (
+        <div
+            class={`${
+                noColor
+                    ? ""
+                    : "border border-solid border-accent-regular bg-accent-regular text-accent-text-over"
+            }  flex gap-2 whitespace-nowrap rounded-full px-3 py-1.5 ${extraClasses}`}
+        >
+            <slot />
+        </div>
+    ) : (
+        <div
+            class={`${
+                noColor
+                    ? ""
+                    : "border border-solid border-accent-regular bg-accent-regular text-accent-text-over"
+            } flex gap-2 whitespace-nowrap rounded-full px-4 py-2 text-md leading-snug ${extraClasses}`}
+        >
+            <slot />
+        </div>
+    )
+}
