@@ -132,7 +132,7 @@ export const ui = {
     "home.skill.rpa": "Robotic Process Automation",
 
     "contact.title": "Vous souhaitez me contacter ?",
-    "contact.send_message": "Envoyez moi un message",
+    "contact.send_message": "Ecrivez-moi",
 
     "footer.quote": "“La chance est ce qui arrive quand la préparation coïncide avec l'opportunité.” –Sénèque"
   },

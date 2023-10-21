@@ -6,7 +6,7 @@ interface Props {
 const { href } = Astro.props
 ---
 
-<a href={href}><slot /></a>
+<a class="text-lg lg:px-10 lg:py-5 lg:text-xl" href={href}><slot /></a>
 
 <style>
     a {
@@ -26,12 +26,6 @@ const { href } = Astro.props
         white-space: nowrap;
     }
 
-    @media (min-width: 20em) {
-        a {
-            font-size: var(--text-lg);
-        }
-    }
-
     /* Overlay for hover effects. */
     a::after {
         content: "";
@@ -45,12 +39,5 @@ const { href } = Astro.props
     a:focus::after,
     a:hover::after {
         background-color: hsla(var(--gray-999-basis), 0.3);
-    }
-
-    @media (min-width: 50em) {
-        a {
-            padding: 1.125rem 2.5rem;
-            font-size: var(--text-xl);
-        }
     }
 </style>

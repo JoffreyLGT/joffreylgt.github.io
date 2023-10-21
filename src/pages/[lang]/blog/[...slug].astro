@@ -52,9 +52,9 @@ const { Content } = await entry.render()
 ---
 
 <BaseLayout title={title} description={description}>
-    <div class="stack gap-20">
+    <div class="stack gap-20 mx-auto">
         <div class="stack gap-15">
-            <header class="flex w-full flex-col px-10">
+            <header class="flex w-full flex-col px-6">
                 <AnimatedUnderline size="xs">
                     <a
                         class="hidden items-center text-accent-regular lg:flex lg:flex-row lg:gap-1"
@@ -66,17 +66,21 @@ const { Content } = await entry.render()
                         {t("blog.post.go_back")}
                     </a>
                 </AnimatedUnderline>
-                <div class="mx-auto w-full text-center md:text-left">
-                    <h1 class="text-5xl">{title}</h1>
+                <div class="mx-auto w-full">
+                    <h1 class="text-center text-3xl laptop:text-5xl">
+                        {title}
+                    </h1>
                     <div
-                        class="mx-auto mt-3 flex w-full flex-col items-center gap-6 p-2 md:flex-row md:gap-10"
+                        class="mx-auto mt-3 flex w-full flex-col flex-wrap items-center justify-center gap-6 py-2 md:flex-row md:gap-10 laptop:text-lg"
                     >
                         <time
                             datetime={publishDate.toISOString().split("T")[0]}
                             class="text-gray-500"
                             >{formatDateRespectingLang(publishDate, lang)}</time
                         >
-                        <div class="flex basis-1/4 gap-2">
+                        <div
+                            class="flex flex-wrap justify-center gap-2 md:flex-nowrap md:justify-start"
+                        >
                             {categories.map((t) => <Pill size="sm">{t}</Pill>)}
                         </div>
                     </div>
@@ -96,23 +100,22 @@ const { Content } = await entry.render()
                     )
                 }
                 <Content />
-                <div
-                    class="mt-16 flex flex-row justify-center gap-3 md:justify-normal"
-                >
-                    {
-                        tags &&
-                            tags.map((tag) => (
-                                <Pill
-                                    size="md"
-                                    noColor={true}
-                                    class="bg-gray-50 text-gray-600"
-                                >
-                                    {tag}
-                                </Pill>
-                            ))
-                    }
-                </div>
             </article>
+            {
+                tags && (
+                    <div class="mb-5 mt-16 flex flex-row items-center justify-center gap-3 px-10 ">
+                        {tags.map((tag) => (
+                            <Pill
+                                size="md"
+                                noColor={true}
+                                class="bg-t_gray-900 text-t_gray-400"
+                            >
+                                {tag}
+                            </Pill>
+                        ))}
+                    </div>
+                )
+            }
             <ContactCTA />
         </div>
     </div>
