@@ -40,57 +40,6 @@ const textLinks: { label: string; href: string }[] = [
             </template>
         </menu-button>
     </div>
-    <noscript>
-        <ul class="nav-items">
-            {
-                textLinks.map(({ label, href }) => (
-                    <li>
-                        <a
-                            aria-current={Astro.url.pathname === href}
-                            class:list={[
-                                "link",
-                                {
-                                    active:
-                                        Astro.url.pathname === href ||
-                                        (href !== "/" &&
-                                            Astro.url.pathname.startsWith(
-                                                href
-                                            )),
-                                },
-                            ]}
-                            href={href}
-                        >
-                            {label}
-                        </a>
-                    </li>
-                ))
-            }
-        </ul>
-    </noscript>
-    <noscript>
-        <!-- TODO @joffreylgt: check why there is so many noscript categories. -->
-        <!--  https://github.com/JoffreyLGT/joffreylgt.github.io/issues/26 -->
-        <div class="menu-footer">
-            <div class="socials">
-                {
-                    social.map(({ href, icon, label }) => (
-                        <a
-                            href={href}
-                            class="social"
-                            target="_blank"
-                            title={t("nav.social.title").replace(
-                                "%social%",
-                                label
-                            )}
-                        >
-                            <span class="sr-only">{label}</span>
-                            <Icon icon={icon} />
-                        </a>
-                    ))
-                }
-            </div>
-        </div>
-    </noscript>
     <div id="menu-content" hidden>
         <ul class="nav-items">
             {
