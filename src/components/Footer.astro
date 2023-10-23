@@ -1,5 +1,6 @@
 ---
 import { getLangFromUrl, useTranslations } from "@i18n/utils"
+import socialAccounts from "@data/social.json"
 
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
@@ -19,5 +20,21 @@ const currentYear = new Date().getFullYear()
         <p class="author">
             &copy; {currentYear} Joffrey Lagut
         </p>
+        <div>
+            <p class="flex flex-wrap justify-center gap-4">
+                {
+                    socialAccounts &&
+                        socialAccounts.map((account) => (
+                            <a
+                                class="duration-theme ease-theme text-t_gray-400 underline decoration-transparent decoration-solid underline-offset-[0.25em]
+                                transition-colors hover:decoration-current focus:decoration-current"
+                                href={account.href}
+                            >
+                                {account.label}
+                            </a>
+                        ))
+                }
+            </p>
+        </div>
     </div>
 </footer>
