@@ -71,6 +71,12 @@ module.exports = {
                 "theme": "83rem",
             }
         },
+        transitionDuration:{
+            "theme": "var(--transition-duration)",
+        },
+        transitionTimingFunction:{
+            "theme": "var(--transition-timing-function)"
+        }
     },
     plugins: [
         require("@tailwindcss/typography"),

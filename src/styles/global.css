@@ -1,4 +1,10 @@
+/* base contains Tailwindcss' preflight classes.
+*  They automatically style elements to be closer to what is expected:
+*  no margins, unstyled headings, unstyled lists, block-level images etc.
+*  For more information: https://tailwindcss.com/docs/preflight
+*/
 @tailwind base;
+
 @tailwind components;
 @tailwind utilities;
 
@@ -90,7 +96,9 @@
         --font-brand: Rubik, var(--font-system);
 
         /* Transitions */
-        --theme-transition: 0.2s ease-in-out;
+        --transition-duration: 0.2s;
+        --transition-timing-function: ease-in-out;
+        --theme-transition: var(--transition-duration) var(--transition-timing-function);
     }
 
     :root.dark {
