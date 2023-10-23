@@ -21,8 +21,9 @@ module.exports = {
             // with @media queries not being able to use css variables.
             // Those CSS styles will be removed incrementaly in the future.
             screens: {
-                "laptop": "50em",
-                "desktop": "60em",
+                "2xl": "83em",    // Override default, used to specify container max-width 
+                "laptop": "50em", // Original theme default breakpoint
+                "desktop": "60em",// Original theme extended breakpoint
             },
             colors: {
                 "t_gray": {
