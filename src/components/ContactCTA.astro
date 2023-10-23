@@ -9,13 +9,18 @@ import Icon from "./Icon.astro"
 ---
 
 <aside
-    class="mt-6 flex flex-col items-center gap-6 border-y border-solid border-b-t_gray-800 border-t-t_gray-800 bg-t_gray-999_40 px-6 py-20 shadow-t_sm lg:flex-row lg:flex-wrap lg:justify-between lg:gap-12 lg:p-28"
+    class="mt-6 border-y border-solid border-t_gray-800 bg-t_gray-999_40 shadow-t_sm"
 >
-    <h2 class="text-center text-xl lg:max-w-md lg:text-start lg:text-3xl">
-        {t("contact.title")}
-    </h2>
-    <CallToAction href="mailto:joffreylagut.work@outlook.fr">
-        {t("contact.send_message")}
-        <Icon icon="paper-plane-tilt" size="1.2em" />
-    </CallToAction>
+    <div
+        class="container mx-auto px-6 flex flex-col items-center gap-6 px-6 py-20
+        lg:flex-row lg:flex-wrap lg:justify-between lg:gap-12 lg:p-28"
+    >
+        <h2 class="text-center text-xl lg:max-w-md lg:text-start lg:text-3xl">
+            {t("contact.title")}
+        </h2>
+        <CallToAction href="mailto:joffreylagut.work@outlook.fr">
+            {t("contact.send_message")}
+            <Icon icon="paper-plane-tilt" size="1.2em" />
+        </CallToAction>
+    </div>
 </aside>

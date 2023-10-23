@@ -54,7 +54,7 @@ const posts = (await getCollection("blog"))
     description={t("home.document.description")}
 >
     <div class="stack gap-20 lg:gap-48">
-        <div class="wrapper stack gap-8 lg:gap-20">
+        <div class="container mx-auto px-6 stack gap-8 lg:gap-20">
             <header class="hero">
                 <Hero
                     title={t("home.hero.title")}
@@ -88,7 +88,7 @@ const posts = (await getCollection("blog"))
             <Skills />
         </div>
 
-        <main class="wrapper stack w-full gap-20 lg:gap-48">
+        <main class="container mx-auto px-6 stack w-full gap-20 lg:gap-48">
             <section class="section with-background with-cta">
                 <header class="section-header stack gap-2 lg:gap-4">
                     <h3>{t("home.work.title")}</h3>
