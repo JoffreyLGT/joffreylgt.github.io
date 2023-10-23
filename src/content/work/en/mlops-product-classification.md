@@ -6,10 +6,10 @@ img_credit: "[Picture by Mohamed Hassan](https://pxhere.com/fr/photo/1571969)"
 img_alt: Image representing an e-commerce website with icon representing shop items floating around.
 description: |
   Creation of a platform to predict the category of the products sold on an e-commerce shop.
-tags:
+categories:
   - data-science
   - machine-learning
-extra_tags:
+extra_categories:
   - project-management
   - python
   - jupyter-notebook

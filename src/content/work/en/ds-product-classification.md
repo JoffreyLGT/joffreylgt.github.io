@@ -6,10 +6,10 @@ img_credit: "[Picture by Mohamed Hassan](https://pxhere.com/fr/photo/1584997)"
 img_alt: Image representing a brain symbol inside a laptop.
 description: |
   Classification model to predict the category of a product based on text and image.
-tags:
+categories:
   - data-science
   - machine-learning
-extra_tags:
+extra_categories:
   - project-management
   - python
   - jupyter-notebook

@@ -27,10 +27,11 @@ export const ui = {
     "work.hero.title": "My projects",
     "work.hero.tagline": "Here is a list of my recent work.<br />If you would like to know more, don't hesitate to contact me: I'll be happy to share more with you!",
 
-    "blog.document.title": "My blog | Joffrey Lagut",
+    "blog.document.title": "Blog | Joffrey Lagut",
     "blog.document.description": "Read Joffrey Lagut's articles.",
-    "blog.hero.title": "My blog",
-    "blog.hero.tagline": "Here is a list of the articles I published.",
+    "blog.hero.title": "Blog",
+    "blog.hero.tagline": "Remarks, solutions to my problems, code snippets or tutorials.",
+    "blog.post.go_back": "Back to list",
 
     "home.hero.title": "Hello, my name is Joffrey Lagut",
     "home.hero.tagline": "I am a tech enthusiast based in Dijon, France.",
@@ -51,14 +52,14 @@ export const ui = {
     "home.skills.top3.title": "Robotics",
     "home.skills.top3.caption": "Process analysis to identify possible automation. Development and release of robots in a secured environment.",
 
-    "home.button.view_all": "View all",
-
     "home.work.title": "Featured projects",
     "home.work.subtitle": "Here is a sample of my recent projects.",
+    "home.work.view_all": "Projects",
     
     "home.blog.title": "Featured articles",
     "home.blog.subtitle": "I love to share some of my thoughts with my pairs. Sometimes, they are only remarks. Other times, they are solutions to issues I faced that could help others.",
-
+    "home.blog.view_all": "Blog",
+    
     "home.skill.title": "Key expertise",
     "home.skill.subtitle": "My passion regarding technology pushes me to always learn new things. Here is a selection of skills I use daily.",
     "home.skill.pm": "Project management",
@@ -89,10 +90,11 @@ export const ui = {
     "work.hero.title": "Mes projets",
     "work.hero.tagline": "Voici une liste de mes travaux les plus récents.<br />Si vous souhaitez en savoir plus, n'hésitez pas à m'envoyer un message : je me ferai une joie d'en discuter avec vous !",
 
-    "blog.document.title": "Mon blog | Joffrey Lagut",
+    "blog.document.title": "Blog | Joffrey Lagut",
     "blog.document.description": "Articles publiés par Joffrey Lagut.",
-    "blog.hero.title": "Mon blog",
-    "blog.hero.tagline": "Ci-dessous mes derniers articles publiés.",
+    "blog.hero.title": "Blog",
+    "blog.hero.tagline": "Simples remarques, solutions à mes problèmes, morceaux de code ou tutoriels.",
+    "blog.post.go_back": "Retour à la liste",
 
     "home.document.title": "Accueil | Joffrey Lagut",
     "home.document.description": "Informations sur Joffrey Lagut.",
@@ -113,13 +115,13 @@ export const ui = {
     "home.skills.top3.title": "Robotique",
     "home.skills.top3.caption": "Analyse des processus et identification des parties automatisables. Développement et mise en production des robots.",
 
-    "home.button.view_all": "Consulter la liste",
-
     "home.work.title": "Réalisations récentes",
     "home.work.subtitle": "Jetez un œil sur quelques un de mes projets récents.",
+    "home.work.view_all": "Projets",
     
-    "home.blog.title": "Articles",
+    "home.blog.title": "Publications récentes",
     "home.blog.subtitle": "J'aime partager mes pensées avec mes pairs. Parfois des remarques, d'autres fois des solutions à certains problèmes que j'ai rencontré.",
+    "home.blog.view_all": "Blog",
 
     "home.skill.title": "Compétences clés",
     "home.skill.subtitle": "Ma passion pour la technologie me pousse toujours à apprendre de nouvelles choses. Voici une sélection de compétences que j'utilise au quotidien :",
@@ -130,7 +132,7 @@ export const ui = {
     "home.skill.rpa": "Robotic Process Automation",
 
     "contact.title": "Vous souhaitez me contacter ?",
-    "contact.send_message": "Envoyez moi un message",
+    "contact.send_message": "Ecrivez-moi",
 
     "footer.quote": "“La chance est ce qui arrive quand la préparation coïncide avec l'opportunité.” –Sénèque"
   },

@@ -25,6 +25,19 @@ export function getUrlWithoutLang(url: URL) {
 
 export function getSlugWithoutLang(slug: string) {
   const [lang, ...slugWithoutLang] = slug.split('/');
-  if (lang in ui) return slugWithoutLang
+  if (lang in ui) return slugWithoutLang.join("/")
   return slug
+}
+
+export function getLangFromSlug(slug: string){
+  const [lang, ..._] = slug.split('/');
+  return lang in ui ? lang: ""
+}
+
+export function formatDateRespectingLang(date: Date, lang: keyof typeof ui){
+  // const options = { year: 'numeric', month: 'long', day: 'numeric' };
+  if (lang == "en"){
+    return new Intl.DateTimeFormat("en-GB", { dateStyle: "medium"}).format(date)
+  }
+    return new Intl.DateTimeFormat("fr-fr", { dateStyle: "medium"}).format(date)
 }

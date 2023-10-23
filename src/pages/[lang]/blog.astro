@@ -9,7 +9,11 @@ export async function getStaticPaths() {
     return paths
 }
 
-import { getLangFromUrl, useTranslations, useTranslatedPath } from "@i18n/utils"
+import {
+    getLangFromUrl,
+    useTranslations,
+    getSlugWithoutLang,
+} from "@i18n/utils"
 
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
@@ -19,13 +23,35 @@ import { getCollection } from "astro:content"
 import BaseLayout from "@layouts/BaseLayout.astro"
 
 import ContactCTA from "@components/ContactCTA.astro"
-import PortfolioPreview from "@components/PortfolioPreview.astro"
+import BlogPreview from "@components/BlogPreview.astro"
 import Hero from "@components/Hero.astro"
-import Grid from "@components/Grid.astro"
 
-const articles = (await getCollection("blog")).sort(
-    (a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
-)
+// Get all articles in the selected language
+const posts_current_lang = (await getCollection("blog"))
+    .filter((post) => post.slug.startsWith(lang))
+    .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
+// Get the other articles
+const posts_other_langs = (await getCollection("blog"))
+    .filter((post) => !post.slug.startsWith(lang))
+    .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
+// Now, combine both list and filter them.
+// If a post is translated into the current language and other language, it will
+// be displayed only once and in the currently selected language.
+const posts = posts_current_lang
+    .concat(...posts_other_langs)
+    .reduce((acc, current) => {
+        if (
+            !acc.find(
+                (item) =>
+                    getSlugWithoutLang(item.slug) ===
+                    getSlugWithoutLang(current.slug)
+            )
+        ) {
+            acc.push(current)
+        }
+        return acc
+    }, [])
+    .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
 ---
 
 <BaseLayout
@@ -39,15 +65,11 @@ const articles = (await getCollection("blog")).sort(
                 tagline={t("blog.hero.tagline")}
                 align="start"
             />
-            <Grid variant="offset">
-                {
-                    articles.map((articles) => (
-                        <li>
-                            <PortfolioPreview project={articles} />
-                        </li>
-                    ))
-                }
-            </Grid>
+            <div
+                class="mx-auto mt-10 grid w-full max-w-2xl grid-cols-1 gap-x-8 gap-y-12 border-gray-200 md:grid-cols-2 lg:max-w-none lg:grid-cols-3"
+            >
+                {posts.map((post) => <BlogPreview post={post} />)}
+            </div>
         </main>
         <ContactCTA />
     </div>

@@ -1,0 +1,122 @@
+---
+import { type CollectionEntry, getCollection } from "astro:content"
+
+import BaseLayout from "@layouts/BaseLayout.astro"
+import { Image } from "astro:assets"
+
+import ContactCTA from "@components/ContactCTA.astro"
+import AnimatedUnderline from "@components/AnimatedUnderline.astro"
+import Hero from "@components/Hero.astro"
+import Icon from "@components/Icon.astro"
+import Pill from "@components/Pill.astro"
+
+interface Props {
+    entry: CollectionEntry<"blog">
+}
+
+import { languages } from "@i18n/ui"
+
+// This is a dynamic route that generates a page for every Markdown file in src/content/
+// Read more about dynamic routes and this `getStaticPaths` function in the Astro docs:
+// https://docs.astro.build/en/core-concepts/routing/#dynamic-routes
+export async function getStaticPaths() {
+    const blog = await getCollection("blog")
+
+    var paths: { params: { lang: string; slug: string }; props: any }[] = []
+    Object.keys(languages).map((lang) => {
+        blog.map((entry) =>
+            paths.push({
+                params: { lang, slug: entry.slug },
+                props: { entry },
+            })
+        )
+    })
+    return paths
+}
+
+import {
+    getLangFromUrl,
+    useTranslations,
+    useTranslatedPath,
+    formatDateRespectingLang,
+} from "@i18n/utils"
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+const translatePath = useTranslatedPath(lang)
+
+const { entry } = Astro.props
+const { title, description, publishDate, img, img_alt, categories, tags } =
+    entry.data
+const { Content } = await entry.render()
+---
+
+<BaseLayout title={title} description={description}>
+    <div class="stack mx-auto gap-20">
+        <div class="stack gap-15">
+            <header class="flex w-full flex-col px-6">
+                <AnimatedUnderline size="xs">
+                    <a
+                        class="hidden items-center text-accent-regular lg:flex lg:flex-row lg:gap-1"
+                        href={translatePath("/blog/")}
+                    >
+                        <span class="">
+                            <Icon icon="arrow-left" />
+                        </span>
+                        {t("blog.post.go_back")}
+                    </a>
+                </AnimatedUnderline>
+                <div class="mx-auto mt-3 w-full">
+                    <h1 class="text-center text-3xl laptop:text-5xl">
+                        {title}
+                    </h1>
+                    <div
+                        class="mx-auto mt-3 flex w-full flex-col flex-wrap items-center justify-center gap-6 py-2 md:flex-row md:gap-10 laptop:text-lg"
+                    >
+                        <time
+                            datetime={publishDate.toISOString().split("T")[0]}
+                            class="text-gray-500"
+                            >{formatDateRespectingLang(publishDate, lang)}</time
+                        >
+                        <div
+                            class="flex flex-wrap justify-center gap-2 md:flex-nowrap md:justify-start"
+                        >
+                            {categories.map((t) => <Pill size="sm">{t}</Pill>)}
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <article
+                class="prose prose-gray mx-auto my-5 px-5 dark:prose-invert lg:prose-xl prose-img:rounded-xl prose-img:shadow-lg"
+            >
+                {
+                    img && (
+                        <Image
+                            src={img}
+                            alt={img_alt || ""}
+                            width={200}
+                            class="aspect-[2] w-full"
+                        />
+                    )
+                }
+                <Content />
+            </article>
+            {
+                tags && (
+                    <div class="mb-5 mt-16 flex flex-row items-center justify-center gap-3 px-10 ">
+                        {tags.map((tag) => (
+                            <Pill
+                                size="md"
+                                noColor={true}
+                                class="bg-t_gray-900 text-t_gray-400"
+                            >
+                                {tag}
+                            </Pill>
+                        ))}
+                    </div>
+                )
+            }
+            <ContactCTA />
+        </div>
+    </div>
+</BaseLayout>

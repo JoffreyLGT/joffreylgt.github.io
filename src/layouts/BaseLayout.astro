@@ -23,9 +23,11 @@ const { title, description } = Astro.props
     </head>
     <body>
         <div class="stack backgrounds">
-            <Nav />
-            <slot />
-            <Footer />
+            <div class="max-w-theme mx-auto">
+                <Nav />
+                <slot />
+                <Footer />
+            </div>
         </div>
 
         <script>
