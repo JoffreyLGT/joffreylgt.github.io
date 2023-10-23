@@ -1,0 +1,17 @@
+[
+    {
+        "label": "GitHub",
+        "href": "https://github.com/JoffreyLGT",
+        "icon": "github-logo"
+    },
+    {
+        "label": "Linkedin",
+        "href": "https://www.linkedin.com/in/joffrey-lagut-9b3b1076/",
+        "icon": "linkedin-logo"
+    },
+    {
+        "label": "Twitter",
+        "href": "https://twitter.com/engr_joff",
+        "icon": "twitter-logo"
+    }
+]
